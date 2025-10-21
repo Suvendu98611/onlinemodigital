@@ -1,0 +1,505 @@
+
+/** map-section **/
+
+.map-section{
+  position: relative;
+}
+
+.map-section .map-inner{
+  position: relative;
+  height: 700px;
+}
+
+.map-section .map-inner iframe{
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+
+
+/** contact-section **/
+
+.contact-section{
+  position: relative;
+}
+
+.contact-section .content-box{
+  position: relative;
+  display: block;
+}
+
+.contact-section .content-box p{
+  max-width: 595px;
+}
+
+.contact-section .contact-sidebar{
+  position: relative;
+  display: block;
+  margin-top: -240px;
+}
+
+.contact-section .contact-sidebar .info-box{
+  position: relative;
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(31, 31, 31, 0.05);
+  padding: 24px 30px;
+  margin-bottom: 30px;
+}
+
+.contact-section .contact-sidebar .info-box .single-item{
+  position: relative;
+  display: block;
+  padding: 0px 0px 0px 70px;
+  margin-bottom: 38px;
+}
+
+.contact-section .contact-sidebar .info-box .single-item:last-child{
+  margin-bottom: 0px;
+}
+
+.contact-section .contact-sidebar .info-box .single-item p{
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-section .contact-sidebar .info-box .single-item h4{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.contact-section .contact-sidebar .info-box .single-item h4 a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.contact-section .contact-sidebar .info-box .single-item h4 a:hover{
+
+}
+
+.contact-section .contact-sidebar .info-box .single-item .icon-box{
+  position: absolute;
+  left: 0px;
+  top: 3px;
+}
+
+.contact-section .contact-sidebar .instagram-widget{
+  position: relative;
+  display: block;
+  border: 1px solid rgba(31, 31, 31, 0.05);
+  padding: 24px 30px 30px 30px;
+}
+
+.contact-section .contact-sidebar .instagram-widget h4{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
+
+.contact-section .contact-sidebar .instagram-widget .theme-btn-one{
+  width: 100%;
+}
+
+.contact-section .contact-sidebar .instagram-widget .theme-btn-one i{
+  margin-right: 10px;
+}
+
+.contact-section .contact-sidebar .instagram-widget .image-list{
+  margin: 0px -6.5px;
+}
+
+.contact-section .contact-sidebar .instagram-widget .image-list li{
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 0px 5.5px 13px 5.5px;
+}
+
+.contact-section .contact-sidebar .instagram-widget .image-list li .image{
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+}
+
+.contact-section .contact-sidebar .instagram-widget .image-list li .image img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+/** rtl-css **/
+
+.rtl .contact-section .contact-sidebar .info-box .single-item{
+  padding-left: 0px;
+  padding-right: 70px;
+}
+
+.rtl .contact-section .contact-sidebar .info-box .single-item .icon-box{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .contact-section .contact-sidebar .instagram-widget .theme-btn-one i{
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+.rtl .contact-section .contact-sidebar .instagram-widget .image-list li{
+  float: right;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .contact-section .contact-sidebar{
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .map-section{
+    padding-top: 70px;
+  }
+
+  .contact-section{
+    padding: 70px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+  .contact-section .contact-sidebar .info-box .single-item h4{
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+
+
+/* --------------------------------------- */
+
+/* -------------------------------- */
+
+/* === SERVICE HERO LAYOUT === */
+.banner-style-two.service-hero{
+  position: relative;
+  background:#131417;          /* dark/black background */
+  min-height: 620px;           /* taller hero */
+  padding-top: 110px;
+  padding-bottom: 240px;       /* space for the two marquees */
+  overflow: hidden;
+  z-index: 0;
+}
+@media (max-width: 991px){
+  .banner-style-two.service-hero{
+    min-height: 600px;
+    padding-bottom: 220px;
+  }
+}
+
+/* Big central title */
+.service-hero-cluster{ position:absolute; inset:0; z-index: 4; pointer-events:none; }
+.service-hero-title{
+  position:absolute; left:50%; top:45%;
+  transform:translate(-50%,-50%);
+  margin:0; line-height:1;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: .5px;
+  font-size: clamp(44px, 9vw, 120px);
+  color:#f5b08b; /* your gradient-y look can stay in HTML/CSS if using */
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
+  text-transform: uppercase;
+}
+
+/* === SHAPES AROUND THE WORD === */
+.banner-style-two.service-hero .pattern-layer{ position:absolute; inset:0; z-index:2; pointer-events:none; }
+.banner-style-two.service-hero .pattern-layer > div{
+  position:absolute; background-size:contain; background-repeat:no-repeat; background-position:center;
+  /* width: clamp(42px, 6vw, 88px); height: clamp(42px, 6vw, 88px); */
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  /* animation: float 7s ease-in-out infinite; */
+}
+
+/* balanced positions (tweak if you like) */
+
+.banner-style-two.service-hero .pattern-11{
+  position: absolute;
+  left:24%;                     
+  top: 51%;                     
+  /* transform: translateY(-50%);   */
+  width: 120px;
+  height: 120px;
+  /* background-repeat: no-repeat; */
+  z-index: 1;                   
+  opacity: .95;  
+  animation: rotate360 16s linear infinite;               
+}
+
+.banner-style-two.service-hero .pattern-10{
+  position: absolute;
+  top: -35px;      
+  left: -30px;
+  width: 25%;         /* size of the curved blob */
+  height: 30%;
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+  opacity: 1;
+  z-index: 2;           /* below header/logo, above hero background */
+  pointer-events: none; /* purely decorative */
+  
+}
+
+
+.banner-style-two.service-hero .pattern-12{
+  left:6%; top:50%; transform:translateY(-50%);
+  width:610px; height:110px; z-index:1; opacity:.95;
+}
+
+
+.banner-style-two.service-hero .pattern-13{    /* upper-left small */
+  top:17%; left:24%;
+  width:140px; height:140px;
+  transform: rotate(277deg);
+  animation: rotate360 16s linear infinite;
+}
+
+
+.banner-style-two.service-hero .pattern-14{    /* upper-right accent */
+  top:20%; left:64%;
+  width:225px; height:125px;
+   transform: rotate(7deg);
+   animation: rotate360 16s linear infinite;
+}
+.banner-style-two.service-hero .pattern-15{    /* lower-left */
+  bottom:30%; left:65%;
+  width:200px; height:120px;
+   transform: rotate(173deg);
+   animation: rotate360 18s linear infinite;
+
+}
+
+@keyframes rotate360 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.banner-style-two.service-hero .pattern-16{    /* lower-right */
+  bottom:-16%; right:-57%;
+  width:2010px; height:1030px;
+}
+
+.banner-style-two.service-hero .pattern-17{    /* bottom mid-left */
+  bottom:-16%; 
+  left:-60%;
+  width:2010px; height:1030px;
+}
+
+
+.banner-style-two.service-hero .pattern-18{ bottom:10%; right:20%; animation-delay:2.1s; }
+
+@keyframes float{
+  0%,100%{ transform: translateY(0) rotate(0deg); }
+  50%    { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* === MARQUEES === */
+/* assumes you already have base .marquee & .marquee__track animation from your theme;
+   we just re-position + add a reverse direction for track #2. */
+
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0;
+  transform: rotate(0deg);         /* keep level (remove tilt) */
+  z-index: 6;
+  /* optional background strip look */
+  background: #ffe16a; color:#131417;
+  padding: 10px 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* move the original one down a bit */
+.banner-style-two.service-hero .marquee--main{ bottom: 95px; }
+
+/* new second marquee – sits below the first */
+.banner-style-two.service-hero .marquee--alt{
+  bottom: 35px;
+  background: #ffef9d;            /* slightly lighter so they’re distinguishable */
+}
+
+/* reverse the direction for the second track (if base marquee animates left) */
+.marquee__track--reverse{
+  animation-direction: reverse !important;
+}
+
+/* spacing for items inside the track */
+.banner-style-two.service-hero .marquee__track span{
+  display:inline-block; padding: 0 28px; font-weight: 700;
+}
+.banner-style-two.service-hero .marquee__track i{
+  display:inline-block; padding: 0 20px; opacity:.65;
+}
+
+@media (max-width: 767px){
+  .service-hero-title{ top: 42%; font-size: clamp(40px, 12vw, 86px); }
+  .banner-style-two.service-hero .marquee--main{ bottom: 90px; }
+  .banner-style-two.service-hero .marquee--alt{  bottom: 30px; }
+}
+
+/* === MARQUEE MOVEMENT FIX === */
+
+/* Base marquee wrapper */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* The track that moves continuously */
+.marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeMove 25s linear infinite;
+}
+
+/* Reverse direction for second marquee */
+.marquee__track--reverse {
+  animation: marqueeMoveReverse 25s linear infinite;
+}
+
+/* Each word + divider */
+.marquee__track span,
+.marquee__track i {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0 28px;
+  color: #131417;
+}
+
+/* Hover pause effect */
+.marquee:hover .marquee__track,
+.marquee:hover .marquee__track--reverse {
+  animation-play-state: paused;
+}
+
+/* Left to right scroll */
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Right to left scroll */
+@keyframes marqueeMoveReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ====== TEAM HERO MARQUEES (bold, creative, no pause) ====== */
+
+/* Bars */
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0; z-index:6; overflow:hidden;
+  background:#ffe16a; color:#0f1115; padding:12px 0;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+.banner-style-two.service-hero .marquee--main{ bottom:95px; }
+.banner-style-two.service-hero .marquee--alt { bottom:35px; background:#ffef9d; }
+
+/* Moving belt (two identical sets for seamless loop) */
+.marquee__belt{
+  display:flex; width:max-content; will-change:transform;
+}
+
+/* Typography — bold/creative */
+.marquee__set{
+  display:inline-flex; align-items:center;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(14px, 1.15vw, 20px);
+  /* subtle stroke+glow for punchy look on the yellow bars */
+  -webkit-text-stroke: .4px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.marquee__set span{ display:inline-block; padding:0 34px; }
+.marquee__set i{ display:inline-block; padding:0 24px; opacity:.8; }
+
+/* Animations (no hover pause) */
+@keyframes scroll-left  { from {transform:translateX(0)}    to {transform:translateX(-50%)} }
+@keyframes scroll-right { from {transform:translateX(-50%)} to {transform:translateX(0)}    }
+
+/* Top strip: LEFT → RIGHT */
+.marquee__belt--right{ animation: scroll-right 20s linear infinite; }
+
+/* Bottom strip: RIGHT → LEFT */
+.marquee__belt--left { animation: scroll-left  14s linear infinite; }
+
+/* Mobile offsets */
+@media (max-width: 767px){
+  .banner-style-two.service-hero .marquee--main{ bottom:90px; }
+  .banner-style-two.service-hero .marquee--alt { bottom:30px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

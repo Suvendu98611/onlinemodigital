@@ -1,0 +1,56 @@
+/* MO Digital preloader (fullscreen, centered, mobile-responsive) */
+:root { --mo-bg:#0a0d14; --mo-red:#ff3b3b; }
+
+body.mo-preloading { overflow: hidden; }
+
+.mo-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--mo-bg);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  isolation: isolate;
+  font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Fade away when done */
+.mo-loader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .55s ease, visibility 0s .56s;
+  pointer-events: none;
+}
+
+/* SVG sizing */
+#mo-stage { width: 100vw; height: 100vh; display: block; }
+@supports (height: 100dvh) {
+  #mo-stage { width: 100dvw; height: 100dvh; }
+}
+
+/* 3D transforms are cleaner with this hint */
+[data-3d] { transform-box: fill-box; transform-origin: 50% 50%; will-change: transform; }
+
+/* Close/skip button */
+.mo-preloader-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  line-height: 36px;
+  border-radius: 999px;
+  border: 0;
+  background: #fff;
+  color: #ff3b3b;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+}
+
+/* Reduce visual weight on very small devices */
+@media (max-width: 480px) {
+  .mo-preloader-close { transform: scale(.9); }
+}

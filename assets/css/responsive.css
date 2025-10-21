@@ -1,0 +1,365 @@
+/* Responsive Css */
+
+
+@media only screen and (max-width: 1549px){
+
+  .main-header .left-column .logo-box{
+    margin-right: 30px;
+  }
+
+  .rtl .main-header .left-column .logo-box{
+    margin-left: 30px;
+  }
+
+  .main-header .header-lower{
+    padding: 0px 30px;
+  }
+
+  .main-header .menu-right-content .support-box{
+    display: none;
+  }
+
+  .main-footer .image-layer,
+  .main-footer .pattern-layer{
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 1200px){
+
+  .main-menu,
+  .sticky-header,
+  .main-header.style-one .outer-container:before{
+    display: none !important;
+  }
+
+  .main-header.header-style-two .header-lower .menu-area{
+    display: block;
+  }
+
+  .side-menu{
+    display: none !important;
+  }
+
+  .mobile-menu.home-3{
+    right: 0px;
+    left: inherit;
+  }
+
+  .menu-area .mobile-nav-toggler {
+    /* display: block; */
+    padding: 10px;
+  }
+
+  .megamenu ul li:first-child{
+    display: none;
+  }
+
+  .main-header.header-style-three{
+    display: block;
+  }
+
+  .side-menu{
+    position: fixed;
+    width: 300px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .side-menu .menu-backdrop{
+    display: block;
+  }
+
+  .side-menu .menu-box{
+    padding: 0px;
+    background: #141417;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  .mobile-menu-visible .side-menu .menu-box {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  .mobile-menu-visible .side-menu{
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+
+}
+
+
+
+@media only screen and (min-width: 768px){
+  .main-menu .navigation > li > ul,
+  .main-menu .navigation > li > ul > li > ul,
+  .main-menu .navigation > li > .megamenu{
+    display:block !important;
+    visibility:hidden;
+    opacity:0;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 999px){
+
+  .main-footer .footer-widget{
+    margin: 0px 0px 30px 0px !important;
+  }
+
+  .main-header .menu-right-content{
+    display: none;
+  }
+  .main-footer .widget-section{
+    padding-bottom: 72px;
+  }
+
+  .sec-title-two .left-content{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .sec-title-two .right-content{
+    padding: 0px !important;
+  }
+
+  .sec-title-two .right-content:before{
+    display: none;
+  }
+
+  .rtl .sec-title-two .left-content{
+    text-align: right;
+  }
+
+  .image-banner:before{
+    display: none;
+  }
+  .menu-area .mobile-nav-toggler {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: 2;
+    display: grid;
+    align-content: center;
+    height: 80px;
+    width: 80px;
+    }
+    .menu-area .mobile-nav-toggler .icon-bar{
+      position: relative;
+      height: 3px;
+      width: 40px;
+      /* display: block; */
+      margin: auto;
+      margin-bottom: 10px;
+}
+
+}
+
+
+@media only screen and (max-width: 767px){
+  .menu-area .mobile-nav-toggler {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: 2;
+    display: grid;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+    }
+    .menu-area .mobile-nav-toggler .icon-bar{
+      position: relative;
+      height: 2px;
+      width: 20px;
+      /* display: block; */
+      margin: auto;
+      margin-bottom: 5px;
+}
+
+  .sec-title h2{
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .sec-title h2 br{
+    display: none;
+  }
+
+  .big-slide-text{
+    padding-bottom: 60px;
+  }
+
+  .sec-title-two h2{
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .image-banner{
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+  .main-header .menu-right-content .link{
+    display: none;
+  }
+
+  .main-header .menu-right-content .btn-box{
+    margin: 0px !important;
+  }
+
+}
+
+
+@media only screen and (max-width: 499px){
+
+  .menu-area .mobile-nav-toggler {
+    position: fixed;
+    top: 0;
+    /* right: 0px; */
+    z-index: 2;
+    display: grid;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+    }
+
+  .mobile-menu{
+    width: 100%;
+  }
+
+  .main-header .menu-right-content{
+    display: none;
+  }
+
+  .main-header .header-lower{
+    padding: 0px 15px;
+  }
+
+  .main-header .outer-box{
+    display: block;
+  }
+
+  .main-header .left-column{
+    justify-content: space-between;
+  }
+
+
+}
+
+/* === FINAL: Mobile header + orange quarter (≤575px) === */
+@media (max-width: 575px) {
+
+  /* Header: transparent, above banner/patterns */
+  .main-header{
+    position: absolute;
+    left: 0; right: 0;
+    top: 8px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    z-index: 5000;
+  }
+
+  /* Cancel desktop negative shift on logo */
+  /* .logo{ margin-left: 0 !important; height: auto; } */
+
+  /* Predictable logo size & stacking */
+  .main-header .header-lower{ padding: 0 12px !important; }
+  .main-header .left-column .logo-box{
+    position: relative;
+    z-index: 2;                 /* stays above orange shape */
+    margin-right: 0 !important;
+  }
+  .main-header .left-column .logo-box img{
+    display: block;
+    /* max-height: 44px;            */
+    width: auto;
+    background: transparent !important; /* image itself must be PNG/SVG with transparency */
+  }
+
+  /* Hamburger clickable above patterns */
+  .menu-area .mobile-nav-toggler{ 
+    position: fixed; 
+    z-index: 2; 
+    display: grid;
+    align-content: center;
+  }
+
+  /* Ensure the pattern layer shows but stays behind header/logo */
+  .banner-style-two .pattern-layer,
+  .banner-section .pattern-layer{
+    display: block !important;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    background: none !important;
+  }
+
+  /* Move the top-left orange quarter UNDER the logo and more LEFT */
+  .banner-style-two .pattern-layer .pattern-1{
+    position: absolute;
+    left:6px;   
+    top: 8px;     
+    width: 44px;  
+    height: 44px; /* ensure visible; background on empty div needs explicit height */
+    z-index: 1;
+    overflow: visible !important;
+    background-size: contain; /* keep image fully visible */
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  /* No pseudo BG bars on the header */
+  .main-header::before,
+  .main-header::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Make sure no nested header containers paint a strip */
+  .main-header .outer-box,
+  .main-header .left-column,
+  .main-header .right-column{
+    background: transparent !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

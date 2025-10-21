@@ -1,0 +1,650 @@
+
+/** blog-details-content **/
+
+.blog-details-content{
+  position: relative;
+}
+
+.blog-details-content .content-one .image-box img{
+  width: 100%;
+}
+
+.blog-details-content .content-one h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 34px;
+  margin-bottom: 17px;
+}
+
+.blog-details-content .author-box{
+  position: relative;
+  display: block;
+  border: 1px solid rgba(31, 31, 31, 0.05);
+  padding: 47px 150px 45px 170px;
+}
+
+.blog-details-content .author-box .author-thumb{
+  position: absolute;
+  display: inline-block;
+  left: 50px;
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.blog-details-content .author-box .author-thumb img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.blog-details-content .author-box h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 34px;
+  margin-bottom: 15px;
+}
+
+.blog-details-content .author-box .social-links{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.blog-details-content .author-box .social-links a{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #FAFAFA;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.blog-details-content .author-box .social-links a:hover{
+  background: #000;
+}
+
+.blog-details-content .nav-btn{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.05);
+}
+
+.blog-details-content .nav-btn a{
+  position: relative;
+  display: inline-block;
+  background: #FAFAFA;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-color);
+  border-radius: 30px;
+  padding: 12px 26px;
+  text-align: center;
+}
+
+.blog-details-content .nav-btn a:hover{
+  color: #fff;
+  background: var(--title-color);
+}
+
+.blog-details-content .nav-btn a img{
+  position: relative;
+  filter: grayscale(100%);
+  transition: all 500ms ease;
+}
+
+.blog-details-content .nav-btn a:hover img{
+  filter: grayscale(0%);
+}
+
+.blog-details-content .nav-btn a:first-child img{
+  margin-right: 5px;
+}
+
+.blog-details-content .nav-btn a:last-child img{
+  margin-left: 5px;
+}
+
+.blog-details-content .tags-list{
+  position: relative;
+  display: block;
+  padding: 30px 0px 90px 0px;
+}
+
+.blog-details-content .tags-list li{
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-details-content .tags-list li:last-child{
+  margin-right: 0px;
+}
+
+.blog-details-content .tags-list li h5{
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 39px;
+}
+
+.blog-details-content .tags-list li a{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 37px;
+  padding: 0px 13px;
+  border-radius: 30px;
+  color: var(--text-color);
+  border: 1px solid rgba(31, 31, 31, 0.05);
+  z-index: 1;
+}
+
+.blog-details-content .tags-list li a:hover{
+  color: #fff;
+}
+
+.blog-details-content .tags-list li a:before{
+  position: absolute;
+  content: '';
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  border-radius: 30px;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.blog-details-content .tags-list li a:hover:before{
+  opacity: 1;
+}
+
+.blog-details-content .group-title{
+  position: relative;
+  display: block;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.blog-details-content .comment-box .comment{
+  position: relative;
+  display: block;
+  padding: 0px 0px 29px 110px;
+  margin-bottom: 27px;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.05);
+}
+
+.blog-details-content .comment-box .comment:last-child{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.blog-details-content .comment-box .comment .comment-thumb{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+}
+
+.blog-details-content .comment-box .comment .comment-thumb img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.blog-details-content .comment-box .comment.replay-comment{
+  margin-left: 70px;
+}
+
+.blog-details-content .comment-box .comment h3{
+  display: block;
+  font-size: 24px;
+  line-height: 34px;
+  margin-bottom: 15px;
+}
+
+.blog-details-content .comment-box .comment .reply-btn{
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--text-color);
+  border: 1px solid #FAFAFA;
+  border-radius: 25px;
+  padding: 0px 14px;
+  z-index: 1;
+}
+
+.blog-details-content .comment-box .comment .reply-btn:hover{
+  color: #fff;
+}
+
+.blog-details-content .comment-box .comment .reply-btn:before{
+  position: absolute;
+  content: '';
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  border-radius: 30px;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.blog-details-content .comment-box .comment .reply-btn:hover:before{
+  opacity: 1;
+}
+
+
+/** rtl-css **/
+
+.rtl .blog-details-content .nav-btn a.prev-btn{
+  margin-right: 0px;
+  margin-left: 30px;
+}
+
+.rtl .blog-details-content .tags-list li{
+  float: right;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+.rtl .blog-details-content .comment-box .comment{
+  padding-left: 0px;
+  padding-right: 110px;
+}
+
+.rtl .blog-details-content .comment-box .comment .comment-thumb{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .blog-details-content .comment-box .comment .reply-btn{
+  right: inherit;
+  left: 0px;
+}
+
+.rtl .blog-details-content .comment-box .comment.replay-comment{
+  margin-left: 0px;
+  margin-right: 70px;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+  .blog-details-content .comment-box .comment.replay-comment{
+    margin-left: 0px;
+  }
+
+  .rtl .blog-details-content .comment-box .comment.replay-comment{
+    margin-right: 0px;
+  }
+
+  .blog-details-content .author-box{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .blog-details-content .author-box .author-thumb{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .blog-details-content .author-box .social-links{
+    position: relative;
+    margin-top: 10px;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+
+
+
+
+
+/* -------------------------------- */
+
+/* === SERVICE HERO LAYOUT === */
+.banner-style-two.service-hero{
+  position: relative;
+  background:#131417;          /* dark/black background */
+  min-height: 620px;           /* taller hero */
+  padding-top: 110px;
+  padding-bottom: 240px;       /* space for the two marquees */
+  overflow: hidden;
+  z-index: 0;
+}
+@media (max-width: 991px){
+  .banner-style-two.service-hero{
+    min-height: 600px;
+    padding-bottom: 220px;
+  }
+}
+
+/* Big central title */
+.service-hero-cluster{ position:absolute; inset:0; z-index: 4; pointer-events:none; }
+.service-hero-title{
+  position:absolute; left:50%; top:45%;
+  transform:translate(-50%,-50%);
+  margin:0; line-height:1;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: .5px;
+  font-size: clamp(44px, 9vw, 120px);
+  color:#f5b08b; /* your gradient-y look can stay in HTML/CSS if using */
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
+  text-transform: uppercase;
+}
+
+/* === SHAPES AROUND THE WORD === */
+.banner-style-two.service-hero .pattern-layer{ position:absolute; inset:0; z-index:2; pointer-events:none; }
+.banner-style-two.service-hero .pattern-layer > div{
+  position:absolute; background-size:contain; background-repeat:no-repeat; background-position:center;
+  /* width: clamp(42px, 6vw, 88px); height: clamp(42px, 6vw, 88px); */
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  /* animation: float 7s ease-in-out infinite; */
+}
+
+/* balanced positions (tweak if you like) */
+
+.banner-style-two.service-hero .pattern-11{
+  position: absolute;
+  left:24%;                     
+  top: 51%;                     
+  /* transform: translateY(-50%);   */
+  width: 120px;
+  height: 120px;
+  /* background-repeat: no-repeat; */
+  z-index: 1;                   
+  opacity: .95;  
+  animation: rotate360 16s linear infinite;               
+}
+
+.banner-style-two.service-hero .pattern-10{
+  position: absolute;
+  top: -35px;      
+  left: -30px;
+  width: 25%;         /* size of the curved blob */
+  height: 30%;
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+  opacity: 1;
+  z-index: 2;           /* below header/logo, above hero background */
+  pointer-events: none; /* purely decorative */
+  
+}
+
+
+.banner-style-two.service-hero .pattern-12{
+  left:6%; top:50%; transform:translateY(-50%);
+  width:610px; height:110px; z-index:1; opacity:.95;
+}
+
+
+.banner-style-two.service-hero .pattern-13{    /* upper-left small */
+  top:17%; left:24%;
+  width:140px; height:140px;
+  transform: rotate(277deg);
+  animation: rotate360 16s linear infinite;
+}
+
+
+.banner-style-two.service-hero .pattern-14{    /* upper-right accent */
+  top:20%; left:64%;
+  width:225px; height:125px;
+   transform: rotate(7deg);
+   animation: rotate360 16s linear infinite;
+}
+.banner-style-two.service-hero .pattern-15{    /* lower-left */
+  bottom:30%; left:65%;
+  width:200px; height:120px;
+   transform: rotate(173deg);
+   animation: rotate360 18s linear infinite;
+
+}
+
+@keyframes rotate360 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.banner-style-two.service-hero .pattern-16{    /* lower-right */
+  bottom:-16%; right:-57%;
+  width:2010px; height:1030px;
+}
+
+.banner-style-two.service-hero .pattern-17{    /* bottom mid-left */
+  bottom:-16%; 
+  left:-60%;
+  width:2010px; height:1030px;
+}
+
+
+.banner-style-two.service-hero .pattern-18{ bottom:10%; right:20%; animation-delay:2.1s; }
+
+@keyframes float{
+  0%,100%{ transform: translateY(0) rotate(0deg); }
+  50%    { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* === MARQUEES === */
+/* assumes you already have base .marquee & .marquee__track animation from your theme;
+   we just re-position + add a reverse direction for track #2. */
+
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0;
+  transform: rotate(0deg);         /* keep level (remove tilt) */
+  z-index: 6;
+  /* optional background strip look */
+  background: #ffe16a; color:#131417;
+  padding: 10px 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* move the original one down a bit */
+.banner-style-two.service-hero .marquee--main{ bottom: 95px; }
+
+/* new second marquee – sits below the first */
+.banner-style-two.service-hero .marquee--alt{
+  bottom: 35px;
+  background: #ffef9d;            /* slightly lighter so they’re distinguishable */
+}
+
+/* reverse the direction for the second track (if base marquee animates left) */
+.marquee__track--reverse{
+  animation-direction: reverse !important;
+}
+
+/* spacing for items inside the track */
+.banner-style-two.service-hero .marquee__track span{
+  display:inline-block; padding: 0 28px; font-weight: 700;
+}
+.banner-style-two.service-hero .marquee__track i{
+  display:inline-block; padding: 0 20px; opacity:.65;
+}
+
+@media (max-width: 767px){
+  .service-hero-title{ top: 42%; font-size: clamp(40px, 12vw, 86px); }
+  .banner-style-two.service-hero .marquee--main{ bottom: 90px; }
+  .banner-style-two.service-hero .marquee--alt{  bottom: 30px; }
+}
+
+/* === MARQUEE MOVEMENT FIX === */
+
+/* Base marquee wrapper */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* The track that moves continuously */
+.marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeMove 25s linear infinite;
+}
+
+/* Reverse direction for second marquee */
+.marquee__track--reverse {
+  animation: marqueeMoveReverse 25s linear infinite;
+}
+
+/* Each word + divider */
+.marquee__track span,
+.marquee__track i {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0 28px;
+  color: #131417;
+}
+
+/* Hover pause effect */
+.marquee:hover .marquee__track,
+.marquee:hover .marquee__track--reverse {
+  animation-play-state: paused;
+}
+
+/* Left to right scroll */
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Right to left scroll */
+@keyframes marqueeMoveReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ====== TEAM HERO MARQUEES (bold, creative, no pause) ====== */
+
+/* Bars */
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0; z-index:6; overflow:hidden;
+  background:#ffe16a; color:#0f1115; padding:12px 0;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+.banner-style-two.service-hero .marquee--main{ bottom:95px; }
+.banner-style-two.service-hero .marquee--alt { bottom:35px; background:#ffef9d; }
+
+/* Moving belt (two identical sets for seamless loop) */
+.marquee__belt{
+  display:flex; width:max-content; will-change:transform;
+}
+
+/* Typography — bold/creative */
+.marquee__set{
+  display:inline-flex; align-items:center;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(14px, 1.15vw, 20px);
+  /* subtle stroke+glow for punchy look on the yellow bars */
+  -webkit-text-stroke: .4px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.marquee__set span{ display:inline-block; padding:0 34px; }
+.marquee__set i{ display:inline-block; padding:0 24px; opacity:.8; }
+
+/* Animations (no hover pause) */
+@keyframes scroll-left  { from {transform:translateX(0)}    to {transform:translateX(-50%)} }
+@keyframes scroll-right { from {transform:translateX(-50%)} to {transform:translateX(0)}    }
+
+/* Top strip: LEFT → RIGHT */
+.marquee__belt--right{ animation: scroll-right 20s linear infinite; }
+
+/* Bottom strip: RIGHT → LEFT */
+.marquee__belt--left { animation: scroll-left  14s linear infinite; }
+
+/* Mobile offsets */
+@media (max-width: 767px){
+  .banner-style-two.service-hero .marquee--main{ bottom:90px; }
+  .banner-style-two.service-hero .marquee--alt { bottom:30px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

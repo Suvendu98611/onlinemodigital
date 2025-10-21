@@ -1,0 +1,165 @@
+
+/** pricing-section **/
+
+.pricing-section{
+  position: relative;
+}
+
+.pricing-block-one .pricing-table{
+  position: relative;
+  display: block;
+  background: #fff;
+  box-shadow: 0px 94px 94px 0px rgba(0, 0, 0, 0.03);
+  margin-bottom: 30px;
+  padding: 50px;
+}
+
+.pricing-block-one .pricing-table .table-header{
+  position: relative;
+  display: block;
+  padding-bottom: 22px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.pricing-block-one .pricing-table .table-header .icon-box{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.pricing-block-one .pricing-table .table-header h2{
+  position: relative;
+  display: block;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.pricing-block-one .pricing-table .table-header h2 span{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pricing-block-one .pricing-table .table-header p{
+  position: relative;
+  display: block;
+}
+
+.pricing-block-one .pricing-table .feature-list li{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 36px;
+  padding-left: 25px;
+}
+
+.pricing-block-one .pricing-table .feature-list li.light{
+  color: #DDDDDD;
+}
+
+.pricing-block-one .pricing-table .feature-list li:before{
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  left: 0px;
+  top: 15px;
+  border-radius: 50%;
+}
+
+.pricing-block-one .pricing-table .feature-list li.light:before{
+  background: #DDDDDD;
+}
+
+.faq-style-two .inner-container{
+  border-bottom: 1px solid #1F1F1F;
+}
+
+
+/** rtl-css **/
+
+.rtl .pricing-block-one .pricing-table .table-header .icon-box{
+  right: inherit;
+  left: 0px;
+}
+
+.rtl .pricing-block-one .pricing-table .feature-list li{
+  padding-left: 0px;
+  padding-right: 25px;
+}
+
+.rtl .pricing-block-one .pricing-table .feature-list li:before{
+  left: inherit;
+  right: 0px;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .pricing-section{
+    padding-bottom: 40px;
+  }
+
+  .pricing-section.pricing-page{
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

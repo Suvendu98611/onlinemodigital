@@ -1,0 +1,835 @@
+
+/** team-section **/
+
+
+.team-section{
+  position: relative;
+  background: #1F1F1F;
+}
+
+.team-block-one .inner-box{
+  position: relative;
+  display: block;
+}
+
+.team-block-one .inner-box .image-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.team-block-one .inner-box .image-box img{
+  width: 100%;
+  transition: all 500ms ease;
+}
+
+.team-block-one .inner-box:hover .image-box img{
+  filter: grayscale(100%);
+}
+
+.team-block-one .inner-box .lower-content{
+  position: relative;
+  display: block;
+  padding-top: 23px;
+}
+
+.team-block-one .inner-box .lower-content h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 34px;
+  margin-bottom: 4px;
+}
+
+.team-block-one .inner-box .lower-content h3 a{
+  display: inline-block;
+  color: #fff;
+}
+
+.team-block-one .inner-box .lower-content h3 a:hover{
+  text-decoration: underline;
+}
+
+.team-block-one .inner-box .lower-content .social-links{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-block-one .inner-box .lower-content .social-links li{
+  position: relative;
+  margin-right: 9px;
+}
+
+.team-block-one .inner-box .lower-content .social-links li a:before{
+  position: absolute;
+  content: '';
+  left: 0px;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #656565;
+  border-radius: 50%;
+  transition: all 500ms ease;
+}
+
+.team-block-one .inner-box .lower-content .social-links li a:hover:before{
+
+}
+
+.team-block-one .inner-box .lower-content .social-links li:last-child{
+  margin: 0px !important;
+}
+
+.team-block-one .inner-box .lower-content .social-links li a{
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 26px;
+  color: #656565;
+  padding-left: 15px;
+}
+
+.team-block-one .inner-box .lower-content .social-links li a:hover{
+
+}
+
+.team-section .dots-style-one .owl-dots .owl-dot{
+  background: #fff;
+}
+
+.team-section .dots-style-one .owl-dots .owl-dot:after{
+  background: #1F1F1F;
+}
+
+.team-section .dots-style-one .owl-dots{
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+/** team-style-two **/
+
+.team-style-two{
+  position: relative;
+}
+
+.team-style-two .team-block-one .inner-box .lower-content h3 a{
+  color: var(--title-color);
+}
+
+.team-style-two .team-block-one .inner-box .lower-content h3 a:hover{
+
+}
+
+.team-style-two .owl-dots{
+  margin-top: 40px;
+}
+
+.team-style-two.home-3:before{
+  position: absolute;
+  content: '';
+  background: #FFF9F7;
+  width: 100%;
+  height: calc(100% - 272px);
+  left: 0px;
+  top: 0px;
+}
+
+.team-page-section .inner-container{
+  border-bottom: 1px solid #1F1F1F;
+}
+
+.team-page-section .team-block-one .inner-box{
+  margin-bottom: 16px;
+}
+
+
+/** rtl-css **/
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .team-section{
+    padding: 70px 0px;
+  }
+  
+  .team-section .dots-style-one .owl-dots{
+    display: none;
+  }
+
+  .team-style-two{
+    padding-bottom: 70px;
+  }
+
+  .team-style-two .owl-dots{
+    display: none;
+  }
+
+  .team-style-two.home-3{
+    padding-top: 70px;
+  }
+
+  .team-page-section .inner-container{
+    padding-bottom: 45px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+.banner-style-two.service-hero{
+  position: relative;
+  background:#131417;          /* dark/black background */
+  min-height: 620px;           /* taller hero */
+  padding-top: 110px;
+  padding-bottom: 240px;       /* space for the two marquees */
+  overflow: hidden;
+  z-index: 0;
+}
+
+
+
+
+/* ------------------------------ */
+
+
+
+
+
+
+/* === SERVICE HERO LAYOUT === */
+.banner-style-two.service-hero{
+  position: relative;
+  background:#131417;          /* dark/black background */
+  min-height: 620px;           /* taller hero */
+  padding-top: 110px;
+  padding-bottom: 240px;       /* space for the two marquees */
+  overflow: hidden;
+  z-index: 0;
+}
+@media (max-width: 991px){
+  .banner-style-two.service-hero{
+    min-height: 600px;
+    padding-bottom: 220px;
+  }
+}
+
+/* Big central title */
+.service-hero-cluster{ position:absolute; inset:0; z-index: 4; pointer-events:none; }
+.service-hero-title{
+  position:absolute; left:50%; top:45%;
+  transform:translate(-50%,-50%);
+  margin:0; line-height:1;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: .5px;
+  font-size: clamp(44px, 9vw, 120px);
+  color:#f5b08b; /* your gradient-y look can stay in HTML/CSS if using */
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
+  text-transform: uppercase;
+}
+
+/* === SHAPES AROUND THE WORD === */
+.banner-style-two.service-hero .pattern-layer{ position:absolute; inset:0; z-index:2; pointer-events:none; }
+.banner-style-two.service-hero .pattern-layer > div{
+  position:absolute; background-size:contain; background-repeat:no-repeat; background-position:center;
+  /* width: clamp(42px, 6vw, 88px); height: clamp(42px, 6vw, 88px); */
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  /* animation: float 7s ease-in-out infinite; */
+}
+
+/* balanced positions (tweak if you like) */
+
+.banner-style-two.service-hero .pattern-11{
+  position: absolute;
+  left:24%;                     
+  top: 51%;                     
+  /* transform: translateY(-50%);   */
+  width: 120px;
+  height: 120px;
+  /* background-repeat: no-repeat; */
+  z-index: 1;                   
+  opacity: .95;  
+  animation: rotate360 16s linear infinite;               
+}
+
+.banner-style-two.service-hero .pattern-10{
+  position: absolute;
+  top: -35px;      
+  left: -30px;
+  width: 25%;         /* size of the curved blob */
+  height: 30%;
+  /* background-repeat: no-repeat; */
+  background-size: contain;
+  opacity: 1;
+  z-index: 2;           /* below header/logo, above hero background */
+  pointer-events: none; /* purely decorative */
+  
+}
+
+
+.banner-style-two.service-hero .pattern-12{
+  left:6%; top:50%; transform:translateY(-50%);
+  width:610px; height:110px; z-index:1; opacity:.95;
+}
+
+
+.banner-style-two.service-hero .pattern-13{    /* upper-left small */
+  top:17%; left:24%;
+  width:140px; height:140px;
+  transform: rotate(277deg);
+  animation: rotate360 16s linear infinite;
+}
+
+
+.banner-style-two.service-hero .pattern-14{    /* upper-right accent */
+  top:20%; left:64%;
+  width:225px; height:125px;
+   transform: rotate(7deg);
+   animation: rotate360 16s linear infinite;
+}
+.banner-style-two.service-hero .pattern-15{    /* lower-left */
+  bottom:30%; left:65%;
+  width:200px; height:120px;
+   transform: rotate(173deg);
+   animation: rotate360 18s linear infinite;
+
+}
+
+@keyframes rotate360 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.banner-style-two.service-hero .pattern-16{    /* lower-right */
+  bottom:-16%; right:-57%;
+  width:2010px; height:1030px;
+}
+
+.banner-style-two.service-hero .pattern-17{    /* bottom mid-left */
+  bottom:-16%; 
+  left:-60%;
+  width:2010px; height:1030px;
+}
+
+
+.banner-style-two.service-hero .pattern-18{ bottom:10%; right:20%; animation-delay:2.1s; }
+
+@keyframes float{
+  0%,100%{ transform: translateY(0) rotate(0deg); }
+  50%    { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* === MARQUEES === */
+/* assumes you already have base .marquee & .marquee__track animation from your theme;
+   we just re-position + add a reverse direction for track #2. */
+
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0;
+  transform: rotate(0deg);         /* keep level (remove tilt) */
+  z-index: 6;
+  /* optional background strip look */
+  background: #ffe16a; color:#131417;
+  padding: 10px 0;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* move the original one down a bit */
+.banner-style-two.service-hero .marquee--main{ bottom: 95px; }
+
+/* new second marquee – sits below the first */
+.banner-style-two.service-hero .marquee--alt{
+  bottom: 35px;
+  background: #ffef9d;            /* slightly lighter so they’re distinguishable */
+}
+
+/* reverse the direction for the second track (if base marquee animates left) */
+.marquee__track--reverse{
+  animation-direction: reverse !important;
+}
+
+/* spacing for items inside the track */
+.banner-style-two.service-hero .marquee__track span{
+  display:inline-block; padding: 0 28px; font-weight: 700;
+}
+.banner-style-two.service-hero .marquee__track i{
+  display:inline-block; padding: 0 20px; opacity:.65;
+}
+
+@media (max-width: 767px){
+  .service-hero-title{ top: 42%; font-size: clamp(40px, 12vw, 86px); }
+  .banner-style-two.service-hero .marquee--main{ bottom: 90px; }
+  .banner-style-two.service-hero .marquee--alt{  bottom: 30px; }
+}
+
+/* === MARQUEE MOVEMENT FIX === */
+
+/* Base marquee wrapper */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* The track that moves continuously */
+.marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeMove 25s linear infinite;
+}
+
+/* Reverse direction for second marquee */
+.marquee__track--reverse {
+  animation: marqueeMoveReverse 25s linear infinite;
+}
+
+/* Each word + divider */
+.marquee__track span,
+.marquee__track i {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0 28px;
+  color: #131417;
+}
+
+/* Hover pause effect */
+.marquee:hover .marquee__track,
+.marquee:hover .marquee__track--reverse {
+  animation-play-state: paused;
+}
+
+/* Left to right scroll */
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Right to left scroll */
+@keyframes marqueeMoveReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ====== TEAM HERO MARQUEES (bold, creative, no pause) ====== */
+
+/* Bars */
+.banner-style-two.service-hero .marquee{
+  position:absolute; left:0; right:0; z-index:6; overflow:hidden;
+  background:#ffe16a; color:#0f1115; padding:12px 0;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+.banner-style-two.service-hero .marquee--main{ bottom:95px; }
+.banner-style-two.service-hero .marquee--alt { bottom:35px; background:#ffef9d; }
+
+/* Moving belt (two identical sets for seamless loop) */
+.marquee__belt{
+  display:flex; width:max-content; will-change:transform;
+}
+
+/* Typography — bold/creative */
+.marquee__set{
+  display:inline-flex; align-items:center;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(14px, 1.15vw, 20px);
+  /* subtle stroke+glow for punchy look on the yellow bars */
+  -webkit-text-stroke: .4px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.marquee__set span{ display:inline-block; padding:0 34px; }
+.marquee__set i{ display:inline-block; padding:0 24px; opacity:.8; }
+
+/* Animations (no hover pause) */
+@keyframes scroll-left  { from {transform:translateX(0)}    to {transform:translateX(-50%)} }
+@keyframes scroll-right { from {transform:translateX(-50%)} to {transform:translateX(0)}    }
+
+/* Top strip: LEFT → RIGHT */
+.marquee__belt--right{ animation: scroll-right 20s linear infinite; }
+
+/* Bottom strip: RIGHT → LEFT */
+.marquee__belt--left { animation: scroll-left  14s linear infinite; }
+
+/* Mobile offsets */
+@media (max-width: 767px){
+  .banner-style-two.service-hero .marquee--main{ bottom:90px; }
+  .banner-style-two.service-hero .marquee--alt { bottom:30px; }
+}
+
+
+/* ------------mobile responsive---------------- */
+
+
+
+
+
+
+/* ===== MOBILE-FIRST ENHANCEMENTS (Digital Marketing – fast & clean) ===== */
+
+/* Stop horizontal scroll on small screens */
+html, body { overflow-x: hidden; }
+
+/* Header: tighter padding, larger toggler tap area */
+@media (max-width: 767px){
+  .main-header .header-lower { padding: 0 16px; }
+  .main-header .logo-box img {  height: auto; width: auto; }
+  .mobile-nav-toggler { width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; }
+  .mobile-nav-toggler .icon-bar { width: 22px; height: 2px; margin: 3px 0; display:block; }
+}
+
+/* Hero: scale title/downsize shapes for phones, keep impact */
+.service-hero-title{
+  font-size: clamp(32px, 9.5vw, 84px);
+  line-height: 1.05;
+  letter-spacing: .02em;
+}
+@media (max-width: 767px){
+  .banner-style-two.service-hero{
+    min-height: 540px;
+    padding-top: 96px;
+    padding-bottom: 180px; /* space for marquees */
+  }
+  /* Hide heavy shape layers on very small devices to reduce paint cost */
+  .banner-style-two.service-hero .pattern-layer > div{
+    filter: none;
+  }
+}
+@media (max-width: 420px){
+  .banner-style-two.service-hero .pattern-layer { display: none; }
+}
+
+/* Marquees: readable on phones, no hover pause, opposite directions */
+.banner-style-two.service-hero .marquee{
+  padding: 10px 0;
+  background: #ffe16a;
+}
+.banner-style-two.service-hero .marquee--alt{
+  background: #ffef9d;
+}
+.marquee__set{
+  font-weight: 900;
+  letter-spacing: .06em;
+  font-size: clamp(12px, 3.2vw, 16px);
+}
+.marquee__set span{ padding: 0 24px; }
+.marquee__set i{ padding: 0 18px; opacity: .85; }
+
+/* Speed tuning for smaller screens (smoother feel) */
+@media (max-width: 767px){
+  .marquee__belt--right{ animation-duration: 24s !important; }
+  .marquee__belt--left { animation-duration: 18s !important; }
+}
+
+/* Respect users with motion sensitivity */
+@media (prefers-reduced-motion: reduce){
+  .marquee__belt,
+  .banner-style-two.service-hero .pattern-layer > div{
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Team grid: 2-up on phones, 1-up on very small devices */
+@media (max-width: 991px){
+  .team-page-section .inner-container { padding-bottom: 24px; }
+}
+@media (max-width: 767px){
+  .team-page-section .row.clearfix{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 18px 14px;
+  }
+  .team-page-section .team-block-one .inner-box{ margin-bottom: 0; }
+}
+@media (max-width: 420px){
+  .team-page-section .row.clearfix{ grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* Team cards: solid thumb aspect + crisp text */
+.team-block-one .inner-box .image-box{
+  aspect-ratio: 1/1;
+  background: #141518;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.team-block-one .inner-box .image-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* prevents stretch & CLS on slow networks */
+  display: block;
+}
+.team-block-one .inner-box .lower-content{
+  padding-top: 12px;
+}
+.team-block-one .inner-box .lower-content h3{
+  font-size: clamp(16px, 4.2vw, 18px);
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+.team-block-one .inner-box .lower-content .social-links{
+  gap: 8px;
+}
+.team-block-one .inner-box .lower-content .social-links li a{
+  font-size: 13px;
+  color: #9aa0a6;
+  padding-left: 10px;
+}
+
+/* Footer: comfortable spacing on mobile */
+@media (max-width: 767px){
+  .main-footer .widget-section .row .footer-column { margin-bottom: 16px; }
+  .main-footer .widget-title h5 { font-size: 16px; }
+}
+
+/* Buttons/tap targets */
+.theme-btn-three, .theme-btn-one{
+  min-height: 40px; padding: 10px 16px; border-radius: 10px;
+}
+
+/* Kill accidental overflows from transforms */
+.pattern-layer, .big-slide-text { overflow: hidden; }
+
+/* Scroll-to-top thumb size for fingers */
+.scroll-to-top .scroll-top-inner{ padding: 10px; }
+
+
+/* ===== MOBILE FIX: header, hero title, shapes, marquees ===== */
+
+/* prevent side scroll */
+html, body { overflow-x: hidden; }
+
+/* header compaction on phones */
+@media (max-width: 767px){
+  .main-header .header-lower{ padding: 0 14px; }
+  .main-header .logo-box img{  height:auto; width:auto; }
+  .mobile-nav-toggler{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+  .mobile-nav-toggler .icon-bar{ width:22px; height:2px; margin:3px 0; display:block; }
+}
+
+/* HERO */
+.banner-style-two.service-hero{
+  /* extra space at bottom for 2 marquees + iPhone safe-area */
+  padding-bottom: calc(180px + env(safe-area-inset-bottom));
+  min-height: 560px;
+}
+.service-hero-title{
+  /* keep centered & readable on narrow screens */
+  top: 44%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(32px, 9.5vw, 84px);
+  line-height: 1.06;
+  letter-spacing: .02em;
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
+}
+
+/* scale down/heavy-shape off on very small screens to avoid overlap */
+@media (max-width: 767px){
+  .banner-style-two.service-hero .pattern-layer > div{
+    filter: none;          /* cheaper paint, fewer glows */
+    transform: scale(.75); /* smaller so they don’t hit the title */
+  }
+}
+@media (max-width: 420px){
+  .banner-style-two.service-hero .pattern-layer{ display:none; } /* remove if you want them visible */
+}
+
+/* MARQUEES — make sure they sit above shapes and stretch full width */
+.banner-style-two.service-hero .marquee{
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 20;             /* above patterns */
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: #ffe16a;
+  color: #0f1115;
+}
+.banner-style-two.service-hero .marquee--main{ bottom: 90px; }
+.banner-style-two.service-hero .marquee--alt{
+  bottom: 30px;
+  background: #ffef9d;
+}
+
+/* BELT + SETS (works with your About-style HTML) */
+.marquee__belt{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee__set{
+  display: inline-flex; align-items: center;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(12px, 3.2vw, 16px);
+  -webkit-text-stroke: .35px rgba(0,0,0,.12);  /* bolder, crisper */
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.marquee__set span{ padding: 0 24px; }
+.marquee__set i{ padding: 0 18px; opacity: .85; }
+
+/* motion (no hover pause) */
+@keyframes scroll-left  { from { transform: translateX(0);     } to { transform: translateX(-50%); } }
+@keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0);     } }
+
+/* top: LEFT→RIGHT, bottom: RIGHT→LEFT; tuned for phones */
+.marquee__belt--right{ animation: scroll-right 24s linear infinite; }
+.marquee__belt--left { animation: scroll-left  18s linear infinite; }
+
+/* tiny phones tweaks */
+@media (max-width: 360px){
+  .banner-style-two.service-hero{ padding-bottom: calc(165px + env(safe-area-inset-bottom)); }
+  .banner-style-two.service-hero .marquee--main{ bottom: 82px; }
+  .banner-style-two.service-hero .marquee--alt { bottom: 24px; }
+}
+/* ===== MOBILE FIX: header, hero title, shapes, marquees ===== */
+
+/* prevent side scroll */
+html, body { overflow-x: hidden; }
+
+/* header compaction on phones */
+@media (max-width: 767px){
+  .main-header .header-lower{ padding: 0 14px; }
+  .main-header .logo-box img{  height:auto; width:auto; }
+  .mobile-nav-toggler{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+  .mobile-nav-toggler .icon-bar{ width:22px; height:2px; margin:3px 0; display:block; }
+}
+
+/* HERO */
+.banner-style-two.service-hero{
+  /* extra space at bottom for 2 marquees + iPhone safe-area */
+  padding-bottom: calc(180px + env(safe-area-inset-bottom));
+  min-height: 560px;
+}
+.service-hero-title{
+  /* keep centered & readable on narrow screens */
+  top: 44%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(32px, 9.5vw, 84px);
+  line-height: 1.06;
+  letter-spacing: .02em;
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
+}
+
+/* scale down/heavy-shape off on very small screens to avoid overlap */
+@media (max-width: 767px){
+  .banner-style-two.service-hero .pattern-layer > div{
+    filter: none;          /* cheaper paint, fewer glows */
+    transform: scale(.75); /* smaller so they don’t hit the title */
+  }
+}
+@media (max-width: 420px){
+  .banner-style-two.service-hero .pattern-layer{ display:none; } /* remove if you want them visible */
+}
+
+/* MARQUEES — make sure they sit above shapes and stretch full width */
+.banner-style-two.service-hero .marquee{
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 20;             /* above patterns */
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: #ffe16a;
+  color: #0f1115;
+}
+.banner-style-two.service-hero .marquee--main{ bottom: 90px; }
+.banner-style-two.service-hero .marquee--alt{
+  bottom: 30px;
+  background: #ffef9d;
+}
+
+/* BELT + SETS (works with your About-style HTML) */
+.marquee__belt{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee__set{
+  display: inline-flex; align-items: center;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: clamp(12px, 3.2vw, 16px);
+  -webkit-text-stroke: .35px rgba(0,0,0,.12);  /* bolder, crisper */
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.marquee__set span{ padding: 0 24px; }
+.marquee__set i{ padding: 0 18px; opacity: .85; }
+
+/* motion (no hover pause) */
+@keyframes scroll-left  { from { transform: translateX(0);     } to { transform: translateX(-50%); } }
+@keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0);     } }
+
+/* top: LEFT→RIGHT, bottom: RIGHT→LEFT; tuned for phones */
+.marquee__belt--right{ animation: scroll-right 24s linear infinite; }
+.marquee__belt--left { animation: scroll-left  18s linear infinite; }
+
+/* tiny phones tweaks */
+@media (max-width: 360px){
+  .banner-style-two.service-hero{ padding-bottom: calc(165px + env(safe-area-inset-bottom)); }
+  .banner-style-two.service-hero .marquee--main{ bottom: 82px; }
+  .banner-style-two.service-hero .marquee--alt { bottom: 24px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

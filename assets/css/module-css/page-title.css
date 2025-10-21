@@ -1,0 +1,296 @@
+
+/** page-title **/
+
+
+.page-title{
+  position: relative;
+  padding: 283px 0px 217px 0px;
+}
+
+.page-title .shape-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page-title h1{
+  position: relative;
+  display: block;
+  font-size: 120px;
+  line-height: 130px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.page-title .bread-crumb{
+  position: relative;
+  display: inline-block;
+  padding-left: 21px;
+}
+
+.page-title .bread-crumb:before{
+  position: absolute;
+  content: '';
+  background-image: url(../../images/icons/icon-2.png);
+  width: 12px;
+  height: 12px;
+  left: 0px;
+  top: 7px;
+  background-repeat: no-repeat;
+}
+
+.page-title .bread-crumb li{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 26px;
+  color: #656565;
+  text-transform: uppercase;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+
+.page-title .bread-crumb li:last-child{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.page-title .bread-crumb li a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.page-title .bread-crumb li a:hover{
+
+}
+
+.page-title .bread-crumb li:before{
+  position: absolute;
+  content: '/';
+  top: 0px;
+  right: 0px;
+  color: var(--title-color);
+}
+
+.page-title .bread-crumb li:last-child:before{
+  display: none;
+}
+
+.page-title .curved-circle{
+  position: absolute;
+  top: 200px;
+  right: 155px;
+  direction: ltr;
+}
+
+.page-title .curved-circle .video-btn{
+  left: 112px;
+}
+
+.page-title .curved-circle .video-btn:after{
+  background: #FFF9F7;
+}
+
+.page-title .pattern-layer .pattern-1{
+  position: absolute;
+  left: 150px;
+  top: 286px;
+  width: 86px;
+  height: 85px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-2{
+  position: absolute;
+  left: 278px;
+  top: 228px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  -webkit-animation: zoom-fade 4s infinite linear;
+  animation: zoom-fade 4s infinite linear;
+}
+
+.page-title .pattern-layer .pattern-3{
+  position: absolute;
+  left: 504px;
+  bottom: 57px;
+  width: 95px;
+  height: 95px;
+  background: #EDFFC6;
+  border-radius: 50%;
+  -webkit-animation: zoom-fade 5s infinite linear;
+  animation: zoom-fade 5s infinite linear;
+}
+
+.page-title .pattern-layer .pattern-4{
+  position: absolute;
+  left: 527px;
+  bottom: 7px;
+  width: 101px;
+  height: 102px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-5{
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  width: 66px;
+  height: 89px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-6{
+  position: absolute;
+  top: 98px;
+  right: 630px;
+  width: 172px;
+  height: 107px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-7{
+  position: absolute;
+  top: 160px;
+  right: 310px;
+  width: 45px;
+  height: 41px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-8{
+  position: absolute;
+  right: 170px;
+  top: 370px;
+  width: 98px;
+  height: 89px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-9{
+  position: absolute;
+  right: 490px;
+  bottom: 40px;
+  width: 180px;
+  height: 143px;
+  background-repeat: no-repeat;
+}
+
+.page-title .pattern-layer .pattern-10{
+  position: absolute;
+  right: 570px;
+  bottom: 100px;
+  width: 40px;
+  height: 40px;
+  background: #FFD3C6;
+  border-radius: 50%;
+}
+
+
+/** rtl-css **/
+
+.rtl .page-title .bread-crumb{
+  padding-left: 0px;
+  padding-right: 21px;
+}
+
+.rtl .page-title .bread-crumb:before{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .page-title .bread-crumb li{
+  padding-right: 0px;
+  padding-left: 15px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+.rtl .page-title .bread-crumb li:before{
+  right: inherit;
+  left: 0px;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+  
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .page-title .curved-circle{
+    display: none;
+  }
+
+  .page-title h1{
+    font-size: 45px;
+    line-height: 55px;
+  }
+
+  .page-title .pattern-layer{
+    display: none;
+  }
+
+  .page-title{
+    padding: 150px 0px 70px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

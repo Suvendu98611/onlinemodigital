@@ -1,0 +1,847 @@
+/* ===============================================
+   MOBILE-ONLY RESPONSIVE CSS
+   (Desktop styles remain unchanged)
+   =============================================== */
+
+/* ONLY apply styles to mobile devices - Desktop stays exactly the same */
+
+/* Mobile header improvements - 768px and below only */
+@media only screen and (max-width: 768px) {
+    .main-header {
+        background: rgba(31, 31, 31, 0.95) !important;
+        backdrop-filter: blur(15px) !important;
+        border-bottom: 1px solid rgba(255, 143, 109, 0.2) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .main-header .header-lower {
+        padding: 12px 25px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 70px !important;
+    }
+    
+    .main-header .logo img {
+        max-height: 45px !important;
+        width: auto !important;
+        filter: brightness(1.1) !important;
+    }
+}
+
+/* Mobile navigation toggle - tablets and below */
+@media only screen and (max-width: 992px) {
+    .mobile-nav-toggler {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 45px !important;
+        height: 45px !important;
+        background: linear-gradient(45deg, #FF8F6D, #ffb347) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        position: relative !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .mobile-nav-toggler .icon-bar {
+        width: 22px !important;
+        height: 3px !important;
+        background: #ffffff !important;
+        margin: 2px 0 !important;
+        border-radius: 2px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .main-menu {
+        display: none !important;
+    }
+}
+
+/* Mobile banner improvements - phones only */
+@media only screen and (max-width: 768px) {
+    .banner-style-two {
+        padding: 90px 0 80px 0 !important;
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #2d2d30 50%, #1a1a1a 75%, #0f0f0f 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Add professional mobile background effects */
+    .banner-style-two::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(255, 143, 109, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255, 179, 71, 0.08) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 40%, rgba(255, 143, 109, 0.05) 50%, transparent 60%) !important;
+        z-index: 1 !important;
+    }
+    
+    .banner-style-two::after {
+        content: '' !important;
+        position: absolute !important;
+        top: -50% !important;
+        right: -20% !important;
+        width: 300px !important;
+        height: 300px !important;
+        background: linear-gradient(45deg, rgba(255, 143, 109, 0.1), rgba(255, 179, 71, 0.1)) !important;
+        border-radius: 50% !important;
+        filter: blur(80px) !important;
+        z-index: 1 !important;
+        animation: floating 6s ease-in-out infinite !important;
+    }
+    
+    /* Hide desktop elements on mobile only (keep pattern layer visible) */
+    .banner-style-two .image-layer,
+    .banner-style-two .big-text {
+        display: none !important;
+    }
+    .banner-style-two .pattern-layer {
+        display: block !important;
+        position: relative !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Mobile container */
+    .banner-style-two .auto-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 25px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    .banner-style-two .content-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 40px 0 !important;
+        text-align: center !important;
+        position: relative !important;
+    }
+}
+
+/* Mobile heading styling - phones only */
+@media only screen and (max-width: 768px) {
+    .banner-style-two .content-box h1,
+    .banner-style-two .content-box h2 {
+        font-size: 42px !important;
+        line-height: 1.15 !important;
+        font-weight: 900 !important;
+        color: #ffffff !important;
+        margin: 0 0 35px 0 !important;
+        text-align: center !important;
+        padding: 0 !important;
+        letter-spacing: -1px !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+        animation: slideInUp 1s ease-out !important;
+    }
+    
+    .banner-style-two .content-box h1 .gradient-color,
+    .banner-style-two .content-box h2 .gradient-color {
+        background: linear-gradient(135deg, #FF8F6D 0%, #ffb347 50%, #FF8F6D 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        display: inline-block !important;
+        position: relative !important;
+    }
+}
+
+/* Mobile description styling - phones only */
+@media only screen and (max-width: 768px) {
+    .banner-description {
+        margin: 35px 0 45px 0 !important;
+        padding: 0 !important;
+    }
+    
+    .banner-description .highlight-line {
+        font-size: 18px !important;
+        line-height: 1.7 !important;
+        color: #e8e8e8 !important;
+        margin: 0 0 30px 0 !important;
+        text-align: center !important;
+        max-width: 350px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-weight: 400 !important;
+        animation: fadeIn 1.2s ease-out 0.3s both !important;
+    }
+    
+    .banner-description strong {
+        color: #FF8F6D !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Mobile service cards - phones only */
+    .highlight-points {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 35px 0 40px 0 !important;
+        display: grid !important;
+        gap: 16px !important;
+        max-width: 380px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .highlight-points li {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+        border: 1px solid rgba(255, 143, 109, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 18px 20px 18px 55px !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        color: #e8e8e8 !important;
+        text-align: left !important;
+        position: relative !important;
+        backdrop-filter: blur(10px) !important;
+        transition: all 0.3s ease !important;
+        animation: slideInLeft 0.8s ease-out both !important;
+    }
+    
+    .highlight-points li::before {
+        position: absolute !important;
+        left: 20px !important;
+        top: 18px !important;
+        font-size: 18px !important;
+    }
+    
+    .highlight-points li:nth-child(1)::before { content: '📈' !important; }
+    .highlight-points li:nth-child(2)::before { content: '🎯' !important; }
+    .highlight-points li:nth-child(3)::before { content: '✨' !important; }
+    
+    .highlight-points li:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(255, 143, 109, 0.2) !important;
+        border-color: rgba(255, 143, 109, 0.4) !important;
+    }
+    
+    .highlight-points li strong {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        display: block !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .highlight-points li:nth-child(1) { animation-delay: 0.5s !important; }
+    .highlight-points li:nth-child(2) { animation-delay: 0.7s !important; }
+    .highlight-points li:nth-child(3) { animation-delay: 0.9s !important; }
+    
+    /* Mobile CTA styling */
+    .banner-description .mobile-cta {
+        background: linear-gradient(135deg, rgba(255, 143, 109, 0.15), rgba(255, 179, 71, 0.1)) !important;
+        border: 1px solid rgba(255, 143, 109, 0.3) !important;
+        border-radius: 15px !important;
+        padding: 20px 25px !important;
+        margin: 30px 0 35px 0 !important;
+        font-size: 17px !important;
+        line-height: 1.6 !important;
+        color: #e8e8e8 !important;
+        text-align: center !important;
+        backdrop-filter: blur(10px) !important;
+        animation: fadeIn 1.4s ease-out 1s both !important;
+    }
+}
+
+/* Mobile video button - phones only */
+@media only screen and (max-width: 768px) {
+    .curved-circle {
+        width: 140px !important;
+        height: 140px !important;
+        margin: 35px auto 40px auto !important;
+        position: relative !important;
+        display: block !important;
+        animation: bounceIn 1s ease-out 1.2s both !important;
+    }
+    
+    .curved-circle .video-btn {
+        width: 65px !important;
+        height: 65px !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, #FF8F6D, #ffb347) !important;
+        box-shadow: 
+            0 8px 25px rgba(255, 143, 109, 0.4),
+            0 4px 15px rgba(255, 143, 109, 0.2),
+            inset 0 2px 4px rgba(255, 255, 255, 0.2) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .curved-circle .video-btn:hover {
+        transform: translate(-50%, -50%) scale(1.1) !important;
+        box-shadow: 0 12px 35px rgba(255, 143, 109, 0.5) !important;
+    }
+    
+    .curved-circle .video-btn a {
+        color: #ffffff !important;
+        font-size: 20px !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+    }
+    
+    .curve-text {
+        position: absolute !important;
+        bottom: -35px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 13px !important;
+        color: #FF8F6D !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Mobile buttons - phones only */
+@media only screen and (max-width: 768px) {
+    .theme-btn-one,
+    .theme-btn-two,
+    .theme-btn-three {
+        display: block !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 15px auto !important;
+        padding: 18px 30px !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        transition: all 0.4s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+        animation: slideInUp 0.8s ease-out both !important;
+    }
+    
+    .theme-btn-one {
+        background: linear-gradient(135deg, #FF8F6D, #ffb347) !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 
+            0 8px 25px rgba(255, 143, 109, 0.3),
+            inset 0 2px 4px rgba(255, 255, 255, 0.2) !important;
+        animation-delay: 1.4s !important;
+    }
+    
+    .theme-btn-one::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+        transition: left 0.5s ease !important;
+    }
+    
+    .theme-btn-one:hover::before {
+        left: 100% !important;
+    }
+    
+    .theme-btn-two {
+        background: transparent !important;
+        color: #FF8F6D !important;
+        border: 2px solid #FF8F6D !important;
+        backdrop-filter: blur(10px) !important;
+        animation-delay: 1.6s !important;
+    }
+    
+    .theme-btn-one:hover,
+    .theme-btn-two:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 35px rgba(255, 143, 109, 0.4) !important;
+    }
+    
+    .theme-btn-two:hover {
+        background: rgba(255, 143, 109, 0.1) !important;
+        border-color: #ffb347 !important;
+        color: #ffb347 !important;
+    }
+}
+
+/* Mobile marquee - phones only */
+@media only screen and (max-width: 768px) {
+    .marquee {
+        position: absolute !important;
+        bottom: 25px !important;
+        left: 0 !important;
+        right: 0 !important;
+        padding: 12px 0 !important;
+        background: linear-gradient(90deg, rgba(255, 143, 109, 0.1), rgba(255, 179, 71, 0.08)) !important;
+        backdrop-filter: blur(10px) !important;
+        border-top: 1px solid rgba(255, 143, 109, 0.2) !important;
+        overflow: hidden !important;
+    }
+    
+    .marquee__track {
+        display: flex !important;
+        animation: marqueeMove 25s linear infinite !important;
+        white-space: nowrap !important;
+    }
+    
+    .marquee__track span {
+        font-size: 15px !important;
+        color: #e8e8e8 !important;
+        margin: 0 25px !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
+    }
+    
+    .marquee__track i {
+        color: #FF8F6D !important;
+        margin: 0 15px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Small mobile phones - 480px and below only */
+@media only screen and (max-width: 480px) {
+    .banner-style-two .content-box h1,
+    .banner-style-two .content-box h2 {
+        font-size: 36px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .banner-description .highlight-line {
+        font-size: 16px !important;
+    }
+    
+    .highlight-points li {
+        font-size: 15px !important;
+        padding: 16px 18px 16px 50px !important;
+    }
+    
+    .theme-btn-one,
+    .theme-btn-two {
+        padding: 16px 25px !important;
+        font-size: 16px !important;
+    }
+    
+    .curved-circle {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .curved-circle .video-btn {
+        width: 55px !important;
+        height: 55px !important;
+    }
+}
+
+/* Your existing mobile CSS code above... */
+
+
+/* ===============================================
+   FIXED MOBILE HEADER - LOGO & NAV ALIGNMENT
+   =============================================== */
+
+/* Mobile header layout fixes */
+@media only screen and (max-width: 768px) {
+    .main-header {
+        background: rgba(31, 31, 31, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(255, 143, 109, 0.15) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+        width: 100% !important;
+    }
+    
+    .main-header .header-lower {
+        padding: 15px 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 65px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        position: relative !important;
+    }
+    
+    /* Logo positioning and styling */
+    .main-header .logo {
+        flex: 0 0 auto !important;
+        z-index: 1001 !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .main-header .logo a {
+        display: flex !important;
+        align-items: center !important;
+        text-decoration: none !important;
+    }
+    
+    .main-header .logo img {
+        max-height: 40px !important;
+        width: auto !important;
+        height: auto !important;
+        filter: brightness(1.1) contrast(1.1) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .main-header .logo:hover img {
+        filter: brightness(1.2) contrast(1.2) !important;
+        transform: scale(1.05) !important;
+    }
+    
+    /* Menu area positioning */
+    .menu-area {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        position: relative !important;
+    }
+    
+    /* Mobile container fixes */
+    .main-header .auto-container,
+    .main-header .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .main-header .header-lower .logo-box {
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .main-header .header-lower .menu-area {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center;
+    }
+}
+
+/* Mobile navigation toggle improvements */
+@media only screen and (max-width: 992px) {
+    .menu-area .mobile-nav-toggler {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 48px !important;
+        height: 48px !important;
+        background: linear-gradient(135deg, #FF8F6D 0%, #ffb347 100%) !important;
+        border-radius: 10px !important;
+        cursor: pointer !important;
+        position: relative !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(255, 143, 109, 0.3) !important;
+        z-index: 1001 !important;
+        border: none !important;
+        outline: none !important;
+    }
+    
+    .menu-area .mobile-nav-toggler:hover {
+        background: linear-gradient(135deg, #ffb347 0%, #FF8F6D 100%) !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0 6px 20px rgba(255, 143, 109, 0.4) !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar {
+        width: 24px !important;
+        height: 3px !important;
+        background: #ffffff !important;
+        margin: 3px 0 !important;
+        border-radius: 2px !important;
+        transition: all 0.4s ease !important;
+        transform-origin: center !important;
+        display: block !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar:nth-child(1) {
+        transform: translateY(0px) !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar:nth-child(2) {
+        transform: translateY(0px) !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar:nth-child(3) {
+        transform: translateY(0px) !important;
+    }
+    
+    /* Active state for mobile toggle */
+    .menu-area .mobile-nav-toggler.is-active .icon-bar:nth-child(1) {
+        transform: rotate(45deg) translateY(9px) !important;
+    }
+    
+    .menu-area .mobile-nav-toggler.is-active .icon-bar:nth-child(2) {
+        opacity: 0 !important;
+        transform: translateX(-20px) !important;
+    }
+    
+    .menu-area .mobile-nav-toggler.is-active .icon-bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-9px) !important;
+    }
+    
+    /* Hide desktop menu on mobile */
+    .main-menu {
+        display: none !important;
+    }
+    
+    .outer-box {
+        display: none !important;
+    }
+    
+    .btn-box {
+        display: none !important;
+    }
+}
+
+/* Enhanced mobile header with better spacing for small devices */
+@media only screen and (max-width: 480px) {
+    .main-header .header-lower {
+        padding: 12px 16px !important;
+        min-height: 60px !important;
+    }
+    
+    .main-header .logo img {
+        max-height: 36px !important;
+    }
+    
+    .menu-area .mobile-nav-toggler {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 8px !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar {
+        width: 20px !important;
+        height: 2px !important;
+        margin: 2px 0 !important;
+    }
+}
+
+/* Mobile menu enhancements */
+@media only screen and (max-width: 768px) {
+    .mobile-menu {
+        position: fixed !important;
+        top: 65px !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 65px) !important;
+        z-index: 999 !important;
+        transform: translateX(-100%) !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .mobile-menu.mobile-menu-visible {
+        transform: translateX(0%) !important;
+    }
+    
+    .mobile-menu .menu-box {
+        width: 280px !important;
+        height: 100% !important;
+        background: linear-gradient(180deg, 
+            rgba(31, 31, 31, 0.98) 0%, 
+            rgba(45, 45, 48, 0.95) 50%, 
+            rgba(31, 31, 31, 0.98) 100%) !important;
+        backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(255, 143, 109, 0.2) !important;
+        padding: 30px 0 !important;
+        overflow-y: auto !important;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .mobile-menu .navigation {
+        padding: 0 30px !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+    
+    .mobile-menu .navigation li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+    
+    .mobile-menu .navigation li > a {
+        font-size: 18px !important;
+        padding: 20px 0 !important;
+        color: #e8e8e8 !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        display: block !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+    }
+    
+    .mobile-menu .navigation li > a:hover,
+    .mobile-menu .navigation li.current > a {
+        color: #FF8F6D !important;
+        padding-left: 20px !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    .mobile-menu .navigation li > a:hover::before {
+        content: '→' !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: #FF8F6D !important;
+        font-weight: bold !important;
+    }
+    
+    /* Mobile menu close button */
+    .mobile-menu .close-btn {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: rgba(255, 143, 109, 0.2) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #FF8F6D !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+    }
+    
+    .mobile-menu .close-btn:hover {
+        background: rgba(255, 143, 109, 0.3) !important;
+        color: #ffffff !important;
+        transform: rotate(90deg) !important;
+    }
+}
+
+/* Mobile menu overlay */
+@media only screen and (max-width: 768px) {
+    .mobile-menu-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 998 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.4s ease !important;
+    }
+    
+    .mobile-menu-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-visible {
+    overflow: hidden !important;
+}
+
+/* Additional mobile header polish */
+@media only screen and (max-width: 768px) {
+    .main-header::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        width: 60% !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 143, 109, 0.3) 50%, 
+            transparent 100%) !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .main-header .header-lower::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(90deg, 
+            rgba(255, 143, 109, 0.02) 0%, 
+            rgba(255, 179, 71, 0.01) 50%, 
+            rgba(255, 143, 109, 0.02) 100%) !important;
+        z-index: -1 !important;
+    }
+}
+
+/* Fix for common mobile header issues */
+@media only screen and (max-width: 768px) {
+    .main-header .header-top {
+        display: none !important;
+    }
+    
+    .main-header .header-upper {
+        display: none !important;
+    }
+    
+    .main-header .logo-outer {
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .main-header .menu-outer {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+    }
+}
+
+/* Very small mobile devices */
+@media only screen and (max-width: 360px) {
+    .main-header .header-lower {
+        padding: 10px 12px !important;
+        min-height: 55px !important;
+    }
+    
+    .main-header .logo img {
+        max-height: 32px !important;
+    }
+    
+    .menu-area .mobile-nav-toggler {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .menu-area .mobile-nav-toggler .icon-bar {
+        width: 18px !important;
+    }
+    
+    .mobile-menu .menu-box {
+        width: 240px !important;
+    }
+}
