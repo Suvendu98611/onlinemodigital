@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | MO Digital</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Project Styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/font-awesome-all.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --mo-red: #E30613;
+      --mo-bg-dark: #020617;
+      --mo-bg-card: rgba(11, 16, 32, 0.95);
+      --mo-border: rgba(148, 163, 184, 0.45);
+      --mo-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #f9fafb;
+      background:
+        radial-gradient(circle at top left, #111827 0%, transparent 50%),
+        radial-gradient(circle at bottom right, #020617 0%, transparent 50%),
+        linear-gradient(135deg, #000 0%, #020617 40%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .error-shell {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .error-card {
+      background: var(--mo-bg-card);
+      border-radius: 26px;
+      border: 1px solid var(--mo-border);
+      box-shadow:
+        0 26px 70px rgba(15, 23, 42, 0.95),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      padding: 30px 32px 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.9fr);
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.12), transparent 55%);
+      mix-blend-mode: soft-light;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    /* Left side */
+    .error-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 10px;
+    }
+
+    .logo-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .logo-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--mo-red);
+      box-shadow: 0 0 14px rgba(227, 6, 19, 0.9);
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 11px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      color: var(--mo-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #facc15;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.9);
+    }
+
+    /* 404 */
+    .code-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .error-code {
+      display: flex;
+      gap: 4px;
+      font-size: clamp(80px, 15vw, 140px);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .error-code span {
+      display: inline-block;
+      color: #f9fafb;
+      text-shadow:
+        0 0 16px rgba(15, 23, 42, 0.9),
+        0 0 28px rgba(15, 23, 42, 1);
+    }
+
+    .error-code span:nth-child(2) {
+      color: var(--mo-red);
+      text-shadow:
+        0 0 26px rgba(227, 6, 19, 1),
+        0 0 48px rgba(227, 6, 19, 0.85);
+    }
+
+    .code-pill {
+      align-self: flex-end;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--mo-muted);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      padding: 6px 14px;
+      white-space: nowrap;
+    }
+
+    .divider-line {
+      width: 170px;
+      height: 2px;
+      margin: 10px 0 18px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(148,163,184,0.25),
+        var(--mo-red),
+        #ffffff,
+        transparent
+      );
+      opacity: 0.9;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--mo-muted);
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-size: clamp(20px, 3.4vw, 28px);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .body-text {
+      font-size: 14px;
+      color: #d1d5db;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .crumbs {
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--mo-muted);
+      margin-bottom: 20px;
+    }
+
+    .buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 11px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.22s ease-in-out;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--mo-red);
+      color: #ffffff;
+      box-shadow: 0 14px 32px rgba(227, 6, 19, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 46px rgba(227, 6, 19, 0.8);
+      background: #ff1b2a;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.8);
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      font-size: 14px;
+    }
+
+    .quick-links {
+      font-size: 12px;
+      color: var(--mo-muted);
+    }
+
+    .quick-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(229, 231, 235, 0.5);
+    }
+
+    .quick-links a:hover {
+      color: #ffffff;
+      border-bottom-style: solid;
+    }
+
+    /* Right side preview */
+    .error-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .preview-card {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top, #111827 0%, #020617 70%);
+      box-shadow:
+        0 18px 50px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15,23,42,0.9);
+      overflow: hidden;
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .preview-dots {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .preview-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4b5563;
+    }
+    .preview-dot.red { background: #f97373; }
+    .preview-dot.yellow { background: #facc15; }
+    .preview-dot.green { background: #4ade80; }
+
+    .preview-body {
+      padding: 12px 12px 14px;
+    }
+
+    .preview-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+    .preview-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .preview-bar {
+      height: 4px;
+      width: 70%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--mo-red), #f97373);
+      margin-bottom: 10px;
+    }
+
+    .preview-text {
+      font-size: 10px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    .preview-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .preview-btn {
+      flex: 1;
+      padding: 6px 8px;
+      border-radius: 999px;
+      border: none;
+      font-size: 10px;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    .preview-btn.primary {
+      background: var(--mo-red);
+      color: #ffffff;
+    }
+
+    .preview-btn.outline {
+      background: transparent;
+      border: 1px solid rgba(148,163,184,0.9);
+      color: #e5e7eb;
+    }
+
+    .preview-tag {
+      text-align: right;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .error-card {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 26px 22px 22px;
+      }
+      .error-right {
+        justify-content: flex-start;
+      }
+      .preview-card {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        align-items: flex-start;
+        padding-top: 32px;
+      }
+      .error-card {
+        padding: 22px 18px 20px;
+        border-radius: 22px;
+        gap: 24px;
+      }
+      .error-header-row {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .buttons-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-pill {
+        width: 100%;
+      }
+      .crumbs {
+        font-size: 12px;
+      }
+      .preview-card {
+        margin-top: 4px;
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .error-card {
+        padding: 18px 14px 18px;
+      }
+      .body-text {
+        font-size: 13px;
+      }
+      .hint {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-shell">
+    <div class="error-card">
+      <!-- LEFT -->
+      <div class="error-left">
+        <div class="error-header-row">
+          <div class="logo-chip">
+            <span class="logo-dot"></span>
+            <span>MO DIGITAL</span>
+          </div>
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Route not found · 404</span>
+          </div>
+        </div>
+
+        <div class="code-row">
+          <div class="error-code">
+            <span>4</span><span>0</span><span>4</span>
+          </div>
+          <div class="code-pill">PAGE NOT FOUND</div>
+        </div>
+
+        <div class="divider-line"></div>
+
+        <div class="eyebrow">Looks like this link missed the campaign</div>
+
+        <div class="main-title">
+          Oops… this page didn’t make it into the final strategy.
+        </div>
+
+        <p class="body-text">
+          The URL you tried to open doesn’t exist or has been moved.<br>
+          But your next growth move with <strong>MO Digital</strong> is still only one click away.
+        </p>
+
+        <div class="crumbs">
+          Re-mapping funnel: Home › Services › High-converting campaigns…
+        </div>
+
+        <p class="hint">
+          Check the link once, or jump back to a safe, conversion-ready page on the site.
+        </p>
+
+        <div class="buttons-row">
+          <a href="index.html" class="btn-pill btn-primary">
+            <span class="btn-icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+          <a href="contact.html" class="btn-pill btn-outline">
+            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            <span>Talk to Our Team</span>
+          </a>
+        </div>
+
+        <div class="quick-links">
+          Or go directly to
+          <a href="service.html">Services</a> ·
+          <a href="about.html">About Us</a> ·
+          <a href="blog.html">Blog</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="error-right">
+        <div class="preview-card">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span class="preview-dot red"></span>
+              <span class="preview-dot yellow"></span>
+              <span class="preview-dot green"></span>
+            </div>
+            <span>modigital.online</span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-pill">
+              <i class="fas fa-bullhorn"></i>
+              <span>Digital Strategy</span>
+            </div>
+            <div class="preview-title">Result-Oriented Marketing</div>
+            <div class="preview-bar"></div>
+            <div class="preview-text">
+              Smart campaigns, clean UI, measurable growth.
+            </div>
+            <div class="preview-buttons">
+              <button class="preview-btn primary">View Services</button>
+              <button class="preview-btn outline">Book a Call</button>
+            </div>
+            <div class="preview-tag">404 SAFE EXIT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
