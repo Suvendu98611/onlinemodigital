@@ -369,10 +369,10 @@
 
 .banner-style-two .image-layer .image-1{
   position: absolute;
-  top: 140px;
-  right: 124px;
+  top: 215px;
+  right: 30px;
   width: 398px;
-  height: 398px;
+  height: 598px;
   border-radius: 140px;
   transform: skew(-5deg);
 }
@@ -384,7 +384,7 @@
 
 .banner-style-two .image-layer .image-1{
   margin-top: -0px;
-  width: 25%;
+  width: 35%;
   /* margin-right: 900px; */
  
 }
@@ -392,11 +392,11 @@
 .banner-style-two .image-layer .image-2{
   position: absolute;
   right: 27px;
-  bottom: 500px;
+  bottom: 400px;
   
-  width: 544px;
-  height: 295px;
-  border-radius: 140px;
+  width: 614px;
+  height: 395px;
+  border-radius: 10px;
   transform: skew(-5deg);
 }
 
