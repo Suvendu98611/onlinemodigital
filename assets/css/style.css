@@ -554,14 +554,14 @@ img {
 }
 
 .parallax-bg{
-  position: absolute;
-  left: 0px;
-  top: -30%;
+ position: absolute;
+  left: 0;
+  top: 0;              /* no upward shift */
   width: 100%;
-  height: calc(100% + 30%);
+  height: 100%;        /* match video-section height */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;  /* keeps heads visible */
 }
 
 
