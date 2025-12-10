@@ -905,3 +905,195 @@
     height: auto;
   }
 }
+/* ======= MOBILE: MoDigital logo + play circle in hero ======= */
+
+/* Phones & small tablets */
+@media (max-width: 768px) {
+
+  /* Position the circular play badge above the yellow marquee */
+  .banner-style-two .curved-circle {
+    position: absolute;
+    left: 14px;
+    bottom: 68px;       /* just above the yellow marquee */
+    margin: 0;
+    z-index: 4;
+  }
+
+  /* Shrink the circle */
+  .curved-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .curved-circle .curve-text {
+    width: 90px;
+    height: 90px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .curved-circle .video-btn {
+    left: 26px;
+    top: 30px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .curved-circle .video-btn a {
+    width: 38px;
+    height: 38px;
+    line-height: 40px;
+  }
+
+  /* Show MoDigital text again and place it beside the circle */
+  .banner-style-two .big-text {
+    display: block !important;   /* override the previous 'display:none' */
+    position: absolute;
+    left: 110px;                 /* to the right of the circle */
+    bottom: 70px;
+    top: auto;
+    margin: 0;
+    font-size: 34px;
+    line-height: 1;
+    min-height: auto;
+    z-index: 4;
+  }
+}
+
+/* Very small phones – slightly smaller + closer */
+@media (max-width: 480px) {
+
+  .banner-style-two .curved-circle {
+    bottom: 60px;
+  }
+
+  .banner-style-two .big-text {
+    left: 100px;
+    bottom: 60px;
+    font-size: 30px;
+  }
+
+  /* Re-enable circle text + play button which were hidden earlier */
+  .curved-circle .video-btn,
+  .curved-circle .curve-text {
+    display: block !important;
+  }
+}
+
+
+/* ===== FINAL MOBILE HERO LOGO TWEAK ===== */
+@media (max-width: 768px) {
+
+  /* Small clean circle at bottom-left (no curved text) */
+  .banner-style-two .curved-circle {
+    position: absolute;
+    left: 16px;
+    bottom: 56px;        /* sits above the yellow marquee */
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    z-index: 4;
+  }
+
+  /* HIDE "INSIGHT AGENCY DIGITAL MARKETING" */
+  .curved-circle .curve-text {
+    display: none !important;
+  }
+
+  .curved-circle .video-btn {
+    left: 4px;
+    top: 4px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .curved-circle .video-btn a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  /* MoDigital text to the SIDE of the circle */
+  .banner-style-two .big-text {
+    display: block !important;
+    position: absolute;
+    left: 70px;          /* horizontal gap from circle */
+    bottom: 56px;        /* same vertical level as circle */
+    top: auto;
+    margin: 0;
+    font-size: 26px;
+    line-height: 1;
+    min-height: auto;
+    z-index: 4;
+  }
+}
+
+/* extra safety for very small phones */
+@media (max-width: 480px) {
+  .banner-style-two .curved-circle {
+    left: 14px;
+    bottom: 52px;
+  }
+  .banner-style-two .big-text {
+    left: 66px;
+    bottom: 52px;
+    font-size: 24px;
+  }
+}
+/* ===== MOBILE: FIX MoDigital + Play Button Side-by-Side ===== */
+@media (max-width: 768px) {
+
+  /* Wrap both items into a flex row */
+  .banner-style-two .content-box {
+    position: relative;
+  }
+
+  .mobile-logo-row {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 58px;     /* just above the yellow marquee */
+    left: 16px;
+    z-index: 10;
+  }
+
+  /* Force both original elements to join the flex row */
+  .banner-style-two .curved-circle,
+  .banner-style-two .big-text {
+    position: static !important;  /* remove old absolute positions */
+    margin: 0 !important;
+  }
+
+  /* Small circle */
+  .curved-circle {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .curved-circle .curve-text { display: none !important; }
+  .curved-circle .video-btn {
+    width: 36px !important;
+    height: 36px !important;
+    left: 4px !important;
+    top: 4px !important;
+  }
+
+  /* MoDigital text */
+  .banner-style-two .big-text {
+    font-size: 26px !important;
+    line-height: 1 !important;
+  }
+}
+@media (max-width: 768px) {
+  /* create a flex container *around* both elements using CSS only */
+  .banner-style-two .curved-circle,
+  .banner-style-two .big-text {
+    display: inline-block !important;
+  }
+
+  /* The container is injected using CSS */
+  .banner-style-two .curved-circle {
+    contain: layout;
+  }
+}
+
