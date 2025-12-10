@@ -374,7 +374,7 @@
   width: 398px;
   height: 598px;
   border-radius: 140px;
-  transform: skew(-5deg);
+  /* transform: skew(-5deg); */
 }
 
 .banner-style-two .image-layer .image img{
@@ -397,7 +397,7 @@
   width: 614px;
   height: 395px;
   border-radius: 10px;
-  transform: skew(-5deg);
+  /* transform: skew(-5deg); */
 }
 
 /* .banner-style-two .image-layer .image-3{
@@ -1186,8 +1186,8 @@
 
   /* positions that look good on tablet */
   .banner-style-two .image-layer .image-1{ right: 6vw;  top: 120px; width: 36vw; height:auto; }
-  .banner-style-two .image-layer .image-2{ right: 6vw;  bottom: 38vh; width: 42vw; height:auto; border-radius: 24vw; transform: skew(-4deg); }
-  .banner-style-two .image-layer .image-3{ right: 50vw; bottom: 36vh; width: 34vw; height:auto; border-radius: 20vw; transform: skew(-3deg); }
+  .banner-style-two .image-layer .image-2{ right: 6vw;  bottom: 38vh; width: 42vw; height:auto; border-radius: 24vw; transform: skew(0deg); }
+  .banner-style-two .image-layer .image-3{ right: 50vw; bottom: 36vh; width: 34vw; height:auto; border-radius: 20vw; transform: skew(0deg); }
 
   /* tiny rotating star/shape */
   .banner-style-two .pattern-layer .pattern-6{
@@ -1286,3 +1286,46 @@
 
 
 
+
+
+
+
+
+
+
+/* === Clean full-bleed hero image on small screens === */
+@media (max-width: 575px) {
+
+  /* remove dark solid bg so no black “frame” shows */
+  .banner-style-two{
+    background: transparent !important;
+  }
+
+  /* reset all individual image boxes */
+  .banner-style-two .image-layer,
+  .banner-style-two .image-layer .image,
+  .banner-style-two .image-layer .image-1,
+  .banner-style-two .image-layer .image-2,
+  .banner-style-two .image-layer .image-3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transform: none !important;      /* remove skew */
+    border-radius: 0 !important;      /* no rounded corners */
+    opacity: 1;                       /* show slide normally */
+  }
+
+  /* make the actual photo fill the whole area */
+  .banner-style-two .image-layer .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+}
