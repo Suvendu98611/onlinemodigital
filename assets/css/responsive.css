@@ -353,8 +353,661 @@
 
 
 
+/* ===== Mobile hero background full cover + slider ===== */
+@media (max-width: 991px) {
+
+  .banner-style-two {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* make image-layer behave like full background only on mobile */
+  .banner-style-two .image-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;              /* behind content */
+  }
+
+  .banner-style-two .image-layer .image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    animation: heroBgFade 14s infinite ease-in-out;
+  }
+
+  /* images fill the whole section */
+  .banner-style-two .image-layer .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* first and second slide */
+  .banner-style-two .image-layer .image-1 {
+    animation-delay: 0s;
+  }
+  .banner-style-two .image-layer .image-2 {
+    animation-delay: 7s;
+  }
+
+  /* keep text above background */
+  .banner-style-two .content-box {
+    
+    position: relative;
+    z-index: 1;
+    /* background: rgba(0, 0, 0, 0.45);    */
+    /* optional dark overlay so text is readable */
+  }
+}
+
+/* keyframes outside media so they exist globally */
+@keyframes heroBgFade {
+  0%, 40% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* MOBILE BACKGROUND CAROUSEL */
+@media (max-width: 991px) {
+
+  .banner-style-two {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* background slider container */
+  .banner-style-two .image-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  /* each image slide */
+  .banner-style-two .image-layer .image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: mobileHeroSlider 12s infinite;
+  }
+
+  /* first slide */
+  .banner-style-two .image-layer .image-1 {
+    animation-delay: 0s;
+  }
+
+  /* second slide */
+  .banner-style-two .image-layer .image-2 {
+    animation-delay: 6s;
+  }
+
+  /* images cover full background */
+  .banner-style-two .image-layer .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ensure content is above background */
+  .banner-style-two .content-box,
+  .banner-style-two .outer-container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Fade slider keyframes */
+@keyframes mobileHeroSlider {
+  0% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 991px) {
+
+  /* Make banner background fill entire area */
+  .banner-style-two .image-layer {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 !important;   /* remove rounding */
+    overflow: hidden;               /* ensures clean edges */
+  }
+
+  /* Background image must fully cover and NOT bend to curve */
+  .banner-style-two .image-layer .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+  }
+
+  /* This shadow/curve container must sit ABOVE the image */
+  .banner-style-two .banner-left-shape,
+  .banner-style-two .inner-container {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Ensure the background image stays behind everything */
+  .banner-style-two .image-layer {
+    z-index: 1 !important;
+  }
+}
+/* === Fix hero image + yellow strip on mobile (≤575px) === */
+@media (max-width: 575px) {
+
+  /* 1. Make banner background image fill the section cleanly */
+  .banner-style-two{
+    position: relative;
+    overflow: hidden;          /* cut anything that overflows */
+  }
+
+  .banner-style-two .image-layer{
+    position: absolute;
+    inset: 0;                  /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-style-two .image-layer .image,
+  .banner-style-two .image-layer .image img{
+    width: 110%;
+    height: 100%;
+    display: block;
+    object-fit: cover;         /* image fully covers, no black sides */
+  }
+
+  /* keep text box above the image */
+  .banner-style-two .auto-container,
+  .banner-style-two .content-box{
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 2. Fix yellow “Performance SEO / …” strip so no black corners */
+  .slide-text-section{
+    margin-top: 0;
+    background: #ffd865;       /* same yellow as strip, so no gaps */
+  }
+
+  .slide-text-box{
+    transform: none;           /* remove rotation -> no black triangles */
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+
+/* === iPad & small laptop hero fix (768–1024px) === */
+@media (min-width: 576px) and (max-width: 1024px) {
+
+  .banner-style-two{
+    position: relative !important;
+    overflow: hidden !important;
+    background: transparent !important;
+  }
+
+  /* reset all hero image wrappers */
+  .banner-style-two .image-layer,
+  .banner-style-two .image-layer .image,
+  .banner-style-two .image-layer .image-1,
+  .banner-style-two .image-layer .image-2,
+  .banner-style-two .image-layer .image-3{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+    transform: none !important;        /* remove skew/tilt */
+    border-radius: 0 !important;        /* no curved edges */
+    opacity: 1;
+  }
+
+  /* make the actual photo fill the hero */
+  .banner-style-two .image-layer .image img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  /* keep content above the image */
+  .banner-style-two .content-box{
+    position: relative;
+    z-index: 3;
+  }
+}
 
 
+@media (min-width: 576px) and (max-width: 1024px) {
+
+  /* move the yellow marquee strip slightly up and remove weird angles */
+  .slide-text-section{
+    margin-top: -10px;          /* pull upwards – adjust if needed */
+    background: #ffd865;        /* same yellow so no gaps */
+  }
+
+  .slide-text-box{
+    transform: none !important; /* remove rotation on tablet */
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+
+/* Reduce yellow marquee height on mobile + tablet */
+@media (max-width: 1024px) {
+  
+  .slide-text-box {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+
+  /* If still a bit tall, reduce font size slightly */
+  .slide-text-box .text-marquee {
+    font-size: 14px !important;
+  }
+}
+
+/* === TABLET / iPad TWEAKS: yellow marquees + remove orange === */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* keep hero height reasonable */
+  .banner-style-two{
+    padding-bottom: 80px;
+  }
+
+  /* make both yellow strips a bit shorter */
+  .banner-style-two .marquee{
+    padding: 10px 0;          /* lower height */
+  }
+
+  /* second strip – pull it closer to the first one */
+  .banner-style-two .marquee + .marquee{
+    margin-top: -14px;        /* negative = closer / almost touching */
+  }
+
+  /* text inside strips – slightly smaller so it breathes */
+  .banner-style-two .marquee__track span{
+    font-size: 15px;
+  }
+
+  /* remove orange gradient elements on tablet */
+  .banner-style-two .big-text,
+  .banner-style-two .pattern-layer{
+    display: none !important;
+  }
+}
+/* ==== MOBILE HERO TEXT VISIBILITY + ANIMATION ==== */
+@media (max-width: 767px) {
+  .banner-style-two {
+    position: relative;
+    color: #ffffff;
+  }
+
+  /* subtle dark overlay only on the banner, not a big black box */
+  .banner-style-two::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* make sure the text sits above overlay & image */
+  .banner-style-two .content-box {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* text sizing & shadow so it pops */
+  .banner-style-two .content-box h1,
+  .banner-style-two .content-box h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .banner-style-two .content-box p,
+  .banner-style-two .content-box li {
+    font-size: 0.9rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
+  }
+}
+@media (max-width: 767px) {
+  /* fade-up animation for hero content children */
+  .banner-style-two .content-box > * {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeUp 0.7s ease-out forwards;
+  }
+
+  .banner-style-two .content-box > *:nth-child(1) { animation-delay: 0.1s; }
+  .banner-style-two .content-box > *:nth-child(2) { animation-delay: 0.25s; }
+  .banner-style-two .content-box > *:nth-child(3) { animation-delay: 0.4s; }
+  .banner-style-two .content-box > *:nth-child(4) { animation-delay: 0.55s; }
+  .banner-style-two .content-box > *:nth-child(5) { animation-delay: 0.7s; }
+  .banner-style-two .content-box > *:nth-child(6) { animation-delay: 0.85s; }
+}
+
+/* keyframes (outside media so they exist globally) */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== MOBILE HERO: TEXT VISIBILITY ===== */
+@media (max-width: 767px) {
+
+  /* stronger but smooth overlay */
+  .banner-style-two::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.80) 0%,   /* darker on top */
+      rgba(0, 0, 0, 0.65) 40%,
+      rgba(0, 0, 0, 0.30) 80%,
+      rgba(0, 0, 0, 0.60) 100%
+    );
+    pointer-events: none;
+  }
+
+  .banner-style-two .content-box {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* BODY TEXT BLOCK: p + bullet list in a soft dark card */
+  .banner-style-two .content-box p,
+  .banner-style-two .content-box ul {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-top: 6px;
+  }
+
+  .banner-style-two .content-box ul {
+    margin-top: 10px;
+  }
+
+  .banner-style-two .content-box ul li {
+    margin-bottom: 4px;
+  }
+
+  .banner-style-two .content-box h1,
+  .banner-style-two .content-box h2 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+}
+@media (max-width: 767px) {
+
+  /* give hero more bottom space so marquees don't overlap text */
+  .banner-style-two {
+    padding-bottom: 110px;
+  }
+
+  /* start the yellow marquee section a bit lower */
+  .slide-text-section {
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  /* Center entire text group */
+  .banner-style-two .content-box {
+    text-align: left;
+    width: 92%;
+    margin: 0 auto;
+    z-index: 3;
+    position: relative;
+  }
+
+  /* Brighter readable text */
+  .banner-style-two .content-box p,
+  .banner-style-two .content-box ul li,
+  .banner-style-two .content-box h1,
+  .banner-style-two .content-box h2 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  }
+
+  /* LAST LINE (✨ ROI...) - ensure visible + spacing */
+  .banner-style-two .content-box p:last-child {
+    margin-bottom: 26px !important;   /* visible + clean spacing */
+  }
+
+  /* BIG GAP between content and marquee */
+  .slide-text-section {
+    margin-top: 35px !important;      /* increase gap */
+  }
+
+  /* Extra hero bottom padding so NOTHING overlaps */
+  .banner-style-two {
+    padding-bottom: 150px !important;
+  }
+}
+@media (max-width: 767px) {
+
+  /* Increase spacing under ALL content */
+  .banner-style-two .content-box {
+    margin-bottom: 40px !important;
+  }
+
+  /* Specifically target the last paragraph (✨ ROI...) */
+  .banner-style-two .content-box p:last-of-type {
+    display: block;
+    margin-top: 14px !important;
+    margin-bottom: 45px !important; /* pushes marquee further down */
+    color: #fff !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Ensure hero is tall enough so marquee never overlaps text */
+  .banner-style-two {
+    padding-bottom: 180px !important;
+  }
+
+  /* Move marquee a bit lower to avoid cutting text */
+  .slide-text-section {
+    margin-top: 45px !important;
+  }
+}
+
+
+/* ===== Hero text & marquee spacing – mobile ===== */
+@media (max-width: 767px) {
+
+  /* More breathing room in the hero */
+  .banner-style-two {
+    padding-bottom: 120px;   /* increase hero height */
+  }
+
+  /* Center the black cards & make sure last line is visible */
+  .banner-style-two .banner-description {
+    max-width: 92%;
+    margin: 10px auto 32px;  /* auto = center, bottom gap for last line */
+  }
+
+  .banner-style-two .banner-description .highlight-line {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  /* ✨ “Let’s create measurable ROI…” line */
+  .banner-style-two .banner-description .highlight-line:last-of-type {
+    margin-top: 10px;
+    margin-bottom: 18px;   /* extra gap above marquee */
+    font-weight: 500;
+    display: block;
+  }
+
+  /* Extra gap between hero and yellow marquee strip */
+  .slide-text-box {
+    margin-top: 10px;      /* push marquee slightly down */
+  }
+}
+/* === Make last line fully visible on mobile === */
+@media (max-width: 767px) {
+
+  /* Widen the text card so long lines fit */
+  .banner-style-two .banner-description {
+    max-width: 98% !important;
+  }
+
+  /* Reduce font size only for the ROI line */
+  .banner-style-two .banner-description .highlight-line {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-top: 8px !important;
+    display: block;
+  }
+
+  /* Extra spacing below that line so marquee never touches it */
+  .banner-style-two .banner-description .highlight-line:last-of-type {
+    margin-bottom: 24px !important;
+  }
+
+  /* Increase hero bottom padding so NOTHING overlaps */
+  .banner-style-two {
+    padding-bottom: 180px !important;
+  }
+
+  /* Push yellow marquee a little lower */
+  .slide-text-section {
+    /* margin-top: 20px !important; */
+  }
+}
+
+
+/* ===== Move all hero text higher on mobile ===== */
+@media (max-width: 767px) {
+
+  /* Move entire content block UP */
+  .banner-style-two .content-box {
+    margin-top: -25px !important;   /* move topwards */
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Extra reduction of spacing inside cards to save vertical space */
+  .banner-style-two .banner-description {
+    margin-bottom: 20px !important;
+  }
+
+  /* ROI line stays fully visible */
+  .banner-style-two .banner-description .highlight-line {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-top: 6px !important;
+    margin-bottom: 26px !important;  /* gap before marquee */
+    display: block;
+  }
+
+  /* Increase hero padding to prevent marquee overlap */
+  .banner-style-two {
+    padding-bottom: 180px !important;
+  }
+
+  /* Move marquee further DOWN */
+  .slide-text-section {
+    margin-top: 45px !important;
+  }
+}
+/* ===== Remove gap between hero section & yellow marquee on mobile ===== */
+@media (max-width: 767px) {
+
+  /* Reduce hero padding so it ends exactly above marquee */
+  .banner-style-two {
+    padding-bottom: 120px !important;   /* previously 150–180px */
+  }
+
+  /* Remove extra spacing before marquee */
+  .slide-text-section,
+  .slide-text-box {
+    margin-top: 0px !important;
+  }
+
+  /* Slight upward pull for the marquee to attach to hero */
+  .slide-text-section {
+    transform: translateY(-8px);   /* adjust this value if needed */
+  }
+
+  /* Ensure last ROI line stays visible above marquee */
+  .banner-style-two .banner-description .highlight-line:last-of-type {
+    margin-bottom: 18px !important;
+  }
+}
+/* ===== iPad / Tablet (768px–1024px) Hero + Marquee Fix ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Move hero text slightly upward for better spacing */
+  .banner-style-two .content-box {
+    margin-top: -20px !important;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Reduce spacing under description box */
+  .banner-style-two .banner-description {
+    margin-bottom: 25px !important;
+  }
+
+  /* Ensure the ROI line is visible */
+  .banner-style-two .banner-description .highlight-line:last-of-type {
+    display: block;
+    margin-bottom: 26px !important;
+    font-size: 15px !important;
+  }
+
+  /* Reduce hero padding bottom so marquee gets closer */
+  .banner-style-two {
+    padding-bottom: 120px !important;
+  }
+
+  /* Remove gap between hero and FIRST yellow marquee */
+  .slide-text-section {
+    margin-top: 0 !important;
+    transform: translateY(-12px); /* adjust if needed */
+  }
+
+  /* Reduce marquee padding to fit neatly under hero */
+  .slide-text-box {
+    padding: 12px 0 !important;
+  }
+}
 
 
 
