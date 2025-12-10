@@ -648,3 +648,70 @@
     transform: translateY(0);
   }
 }
+/* ==== OVERRIDE: MOBILE/TABLET HERO BACKGROUND SLIDER ==== */
+@media (max-width: 991px) {
+
+  /* hero background container */
+  .banner-style-two .image-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 0 !important;
+  }
+
+  /* each background slide */
+  .banner-style-two .image-layer .image {
+    position: absolute;
+    inset: 0;
+    width: 110%;          /* a bit wider so no black edge on sides */
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    animation: mobileHeroSlider 14s infinite ease-in-out;
+  }
+
+  .banner-style-two .image-layer .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    transform: none !important;   /* no tilt */
+  }
+
+  /* first & second slide timing */
+  .banner-style-two .image-layer .image-1 {
+    animation-delay: 0s;
+  }
+  .banner-style-two .image-layer .image-2 {
+    animation-delay: 7s;
+  }
+}
+
+/* simple fade slider for background images */
+@keyframes mobileHeroSlider {
+  0%, 40%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+/* ==== MOBILE: ONLY ONE YELLOW MARQUEE, PERFECTLY ATTACHED ==== */
+@media (max-width: 767px) {
+
+  /* hide any extra marquee strips after the first one */
+  .banner-style-two .marquee:nth-of-type(n+2) {
+    display: none !important;
+  }
+
+  /* attach the first yellow strip neatly to the hero */
+  .slide-text-section {
+    margin-top: 0 !important;
+    transform: translateY(-6px);   /* little lift, no visible gap */
+    background: #ffd865;
+  }
+
+  .slide-text-box {
+    padding: 8px 0 !important;
+    border-radius: 0;
+  }
+}
