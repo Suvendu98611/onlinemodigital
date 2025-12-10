@@ -70,6 +70,16 @@
 .icon-16:before {
   content: "\e90e";
 }
+
+.icon-17.gradient-color.cgt {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;  
+  height: 80px;
+  left: 24px;
+}
 .icon-17:before {
   content: "\e90f";
 }
