@@ -1,6 +1,7 @@
-/* =========================
-   Responsive Css
-========================= */
+/* Responsive Css */
+/* ------------------------------------------------------ */
+/* ========== DESKTOP DOWN (HEADER, FOOTER, GLOBAL) ===== */
+/* ------------------------------------------------------ */
 
 @media only screen and (max-width: 1549px){
 
@@ -26,11 +27,6 @@
   }
 
 }
-
-
-/* =========================
-   ≤1200px
-========================= */
 
 @media only screen and (max-width: 1200px){
 
@@ -103,11 +99,6 @@
   }
 }
 
-
-/* =========================
-   Desktop dropdowns (≥768)
-========================= */
-
 @media only screen and (min-width: 768px){
   .main-menu .navigation > li > ul,
   .main-menu .navigation > li > ul > li > ul,
@@ -117,11 +108,6 @@
     opacity:0;
   }
 }
-
-
-/* =========================
-   ≤999px
-========================= */
 
 @media only screen and (max-width: 999px){
 
@@ -178,11 +164,6 @@
   }
 }
 
-
-/* =========================
-   ≤767px – general
-========================= */
-
 @media only screen and (max-width: 767px){
 
   .menu-area .mobile-nav-toggler {
@@ -228,11 +209,6 @@
   }
 }
 
-
-/* =========================
-   ≤599px
-========================= */
-
 @media only screen and (max-width: 599px){
 
   .main-header .menu-right-content .link{
@@ -242,13 +218,7 @@
   .main-header .menu-right-content .btn-box{
     margin: 0px !important;
   }
-
 }
-
-
-/* =========================
-   ≤499px
-========================= */
 
 @media only screen and (max-width: 499px){
 
@@ -283,16 +253,13 @@
   }
 }
 
-
-/* =========================
-   MOBILE HEADER + ORANGE LOGO SHAPE (≤575px)
-========================= */
-
+/* === Mobile header + orange logo quarter (≤575px) === */
 @media (max-width: 575px) {
 
   .main-header{
     position: absolute;
-    left: 0; right: 0;
+    left: 0; 
+    right: 0;
     top: 8px;
     background: transparent !important;
     box-shadow: none !important;
@@ -300,13 +267,13 @@
     z-index: 5000;
   }
 
-  .main-header .header-lower{
-    padding: 0 12px !important;
+  .main-header .header-lower{ 
+    padding: 0 12px !important; 
   }
 
   .main-header .left-column .logo-box{
     position: relative;
-    z-index: 3;
+    z-index: 2;
     margin-right: 0 !important;
   }
 
@@ -318,7 +285,7 @@
 
   .menu-area .mobile-nav-toggler{ 
     position: fixed; 
-    z-index: 3; 
+    z-index: 2; 
     display: grid;
     align-content: center;
   }
@@ -334,7 +301,7 @@
 
   .banner-style-two .pattern-layer .pattern-1{
     position: absolute;
-    left:6px;   
+    left: 6px;   
     top: 8px;     
     width: 44px;  
     height: 44px;
@@ -344,13 +311,25 @@
     background-repeat: no-repeat;
     background-position: top left;
   }
+
+  .main-header::before,
+  .main-header::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  .main-header .outer-box,
+  .main-header .left-column,
+  .main-header .right-column{
+    background: transparent !important;
+  }
 }
 
+/* ------------------------------------------------------ */
+/* ========== HERO BACKGROUND (MOBILE & TABLET) ========= */
+/* ------------------------------------------------------ */
 
-/* =========================
-   HERO BACKGROUND – SHARED MOBILE/TABLET (≤991px)
-========================= */
-
+/* Make hero image full, straight background on ≤991px  */
 @media (max-width: 991px) {
 
   .banner-style-two {
@@ -374,16 +353,7 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    opacity: 0;
-    animation: mobileHeroSlider 12s infinite;
-  }
-
-  .banner-style-two .image-layer .image-1 {
-    animation-delay: 0s;
-  }
-
-  .banner-style-two .image-layer .image-2 {
-    animation-delay: 6s;
+    opacity: 1;               /* static – no more extra fades */
   }
 
   .banner-style-two .image-layer .image img {
@@ -391,28 +361,23 @@
     height: 100%;
     object-fit: cover;
     border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  .banner-style-two .banner-left-shape,
+  .banner-style-two .inner-container {
+    position: relative;
+    z-index: 5;
   }
 
   .banner-style-two .content-box,
   .banner-style-two .outer-container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
 }
 
-@keyframes mobileHeroSlider {
-  0%   { opacity: 1; }
-  40%  { opacity: 1; }
-  50%  { opacity: 0; }
-  90%  { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-/* =========================
-   EXTRA MOBILE BG TWEAK (≤575px)
-========================= */
-
+/* Slight 110% width on very small phones to avoid any black line */
 @media (max-width: 575px) {
 
   .banner-style-two .image-layer .image,
@@ -421,12 +386,6 @@
     height: 100%;
     display: block;
     object-fit: cover;
-  }
-
-  .banner-style-two .auto-container,
-  .banner-style-two .content-box{
-    position: relative;
-    z-index: 2;
   }
 
   .slide-text-section{
@@ -441,18 +400,13 @@
   }
 }
 
-
-/* =========================
-   TABLET / SMALL LAPTOP (576–1024px)
-========================= */
-
+/* iPad / small laptop – keep image straight, remove skew */
 @media (min-width: 576px) and (max-width: 1024px) {
 
   .banner-style-two{
     position: relative !important;
     overflow: hidden !important;
     background: transparent !important;
-    padding-bottom: 120px !important;
   }
 
   .banner-style-two .image-layer,
@@ -484,21 +438,31 @@
   .banner-style-two .content-box{
     position: relative;
     z-index: 3;
-    margin-top: -20px !important;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* ========== YELLOW MARQUEES (MOBILE & TABLET) ========= */
+/* ------------------------------------------------------ */
+
+/* Common – reduce height a little on ≤1024px */
+@media (max-width: 1024px) {
+
+  .slide-text-box {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
   }
 
-  /* yellow marquee closer & straight */
-  .slide-text-section{
-    margin-top: 0 !important;
-    transform: translateY(-12px);
-    background: #ffd865;
+  .slide-text-box .text-marquee {
+    font-size: 14px !important;
   }
+}
 
-  .slide-text-box{
-    transform: none !important;
-    margin-top: 0;
-    border-radius: 0;
-    padding: 12px 0 !important;
+/* Tablet / iPad tweaks for marquees */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .banner-style-two{
+    padding-bottom: 120px !important;
   }
 
   .banner-style-two .marquee{
@@ -506,7 +470,7 @@
   }
 
   .banner-style-two .marquee + .marquee{
-    margin-top: -14px;
+    margin-top: -10px;
   }
 
   .banner-style-two .marquee__track span{
@@ -518,43 +482,46 @@
     display: none !important;
   }
 
-  .banner-style-two .banner-description .highlight-line:last-of-type {
-    display: block;
-    margin-bottom: 26px !important;
-    font-size: 15px !important;
+  .slide-text-section{
+    margin-top: 0 !important;
+    transform: translateY(-12px);
+  }
+
+  .slide-text-box{
+    padding: 12px 0 !important;
   }
 }
 
-
-/* =========================
-   YELLOW MARQUEE HEIGHT (≤1024px)
-========================= */
-
-@media (max-width: 1024px) {
-  .slide-text-box {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-  }
-
-  .slide-text-box .text-marquee {
-    font-size: 14px !important;
-  }
-}
-
-
-/* =========================
-   MOBILE HERO TEXT (≤767px)
-========================= */
-
+/* Attach first yellow strip directly under hero on phones */
 @media (max-width: 767px) {
 
-  /* dark overlay so text is always readable */
+  .banner-style-two {
+    padding-bottom: 120px !important;
+  }
+
+  .slide-text-section,
+  .slide-text-box {
+    margin-top: 0 !important;
+  }
+
+  .slide-text-section {
+    transform: translateY(-6px);
+  }
+}
+
+/* ------------------------------------------------------ */
+/* ========== HERO TEXT – VISIBILITY & POSITION ========= */
+/* ------------------------------------------------------ */
+
+/* Mobile overlay + text readability */
+@media (max-width: 767px) {
+
   .banner-style-two {
     position: relative;
     color: #ffffff;
-    padding-bottom: 130px !important;  /* enough height for ROI line */
   }
 
+  /* stronger but smooth overlay on image */
   .banner-style-two::before {
     content: "";
     position: absolute;
@@ -570,70 +537,93 @@
     pointer-events: none;
   }
 
-  /* CONTENT POSITION + WIDTH */
   .banner-style-two .content-box {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     width: 92%;
-    margin: -10px auto 0;        /* pull a little up */
+    margin: -18px auto 0;   /* move everything slightly UP */
     text-align: left;
   }
 
-  /* HERO HEADING – bolder & brighter */
+  /* Main heading – more bold & bright */
   .banner-style-two .content-box h1,
-  .banner-style-two .content-box h2 {
-    font-size: 1.65rem;
-    line-height: 1.25;
-    font-weight: 800;
+  .banner-style-two .content-box h2{
+    font-size: 1.7rem;
+    line-height: 1.3;
+    font-weight: 700;
     color: #ffffff !important;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
   }
 
-  /* BODY TEXT + BULLETS */
+  /* Paragraph / bullet cards */
   .banner-style-two .content-box p,
-  .banner-style-two .content-box ul li {
-    color: #ffffff !important;
-    font-size: 0.9rem;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
-  }
-
-  /* translucent black cards behind description + bullets */
-  .banner-style-two .content-box p,
-  .banner-style-two .content-box ul {
+  .banner-style-two .content-box ul{
     background: rgba(0, 0, 0, 0.55);
-    padding: 8px 10px;
-    border-radius: 10px;
+    padding: 10px 11px;
+    border-radius: 12px;
     margin-top: 6px;
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
   }
 
-  .banner-style-two .content-box ul {
+  .banner-style-two .content-box ul{
     margin-top: 10px;
   }
 
-  .banner-style-two .content-box ul li {
+  .banner-style-two .content-box ul li{
     margin-bottom: 4px;
   }
 
-  /* LAST LINE (✨ ROI...) – smaller + extra gap above marquee */
-  .banner-style-two .content-box p:last-of-type {
-    font-size: 13px;
-    line-height: 1.45;
-    margin-top: 8px;
-    margin-bottom: 20px;          /* gap above yellow strip */
+  /* LAST LINE – ✨ ROI... – always visible */
+  .banner-style-two .content-box p:last-of-type{
+    margin-top: 10px !important;
+    margin-bottom: 18px !important; /* gap above marquee */
+    font-size: 13px !important;
+    line-height: 1.45 !important;
     display: block;
   }
 
-  /* NO BIG GAP between hero & marquee, but still clean */
-  .slide-text-section {
-    margin-top: 0 !important;
-    transform: translateY(-6px);  /* attaches nicely under hero */
+  /* Extra breathing room so marquee never cuts the text */
+  .banner-style-two{
+    padding-bottom: 140px !important;
+  }
+}
+
+/* Tablet hero text adjustments (same feel as mobile) */
+@media (min-width: 768px) and (max-width: 1024px){
+
+  .banner-style-two .content-box{
+    margin-top: -20px !important;
+    position: relative;
+    z-index: 5;
+    width: 80%;
   }
 
-  .slide-text-box {
-    margin-top: 0 !important;
+  .banner-style-two .content-box h1,
+  .banner-style-two .content-box h2{
+    font-weight: 700;
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
   }
 
-  /* fade-up animation for children (nice subtle motion) */
+  .banner-style-two .content-box p,
+  .banner-style-two .content-box ul{
+    background: rgba(0,0,0,0.45);
+    padding: 12px 14px;
+    border-radius: 14px;
+    margin-top: 8px;
+  }
+
+  .banner-style-two .content-box p:last-of-type{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+}
+
+/* Simple fade-up animation for hero content (mobile only) */
+@media (max-width: 767px){
   .banner-style-two .content-box > * {
     opacity: 0;
     transform: translateY(18px);
@@ -656,18 +646,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-/* === Move hero text closer to header on mobile & tablet (≤1024px) === */
-@media (max-width: 1024px) {
-  .banner-style-two .content-box {
-    margin-top: -40px !important;   /* move UP – adjust (-30 / -50) if needed */
-  }
-}
-
-/* Little extra bottom space so last line never touches marquee */
-@media (max-width: 1024px) {
-  .banner-style-two {
-    padding-bottom: 140px !important;
   }
 }
