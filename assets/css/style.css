@@ -558,7 +558,7 @@ img {
   left: 0;
   top: 0;              /* no upward shift */
   width: 100%;
-   height: calc(50% + 30%);
+   height: calc(60% + 30%);
   /* height: 100%;        */
   background-size: cover;
   background-repeat: no-repeat;
@@ -2657,7 +2657,17 @@ button.ltr {
   }
 }
 
-
+/* FULL-WIDTH BACKGROUND – removes black gaps on sides */
+image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;          /* right ki jagah left */
+  width: 100%;      /* 280px ki jagah full width */
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 
 
