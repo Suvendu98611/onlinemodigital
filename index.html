@@ -2158,14 +2158,17 @@
 
 
 <!-- ===============================
-     MO PREMIUM CHATBOT (FULL)
+     MO PREMIUM CHATBOT (HTML + JS)
+     CSS is in style.css
 ================================ -->
 <div id="mo-ai" class="mo-ai">
   <button class="mo-ai__fab" aria-label="Open chat">
-    <span class="mo-ai__dot"></span> 🤖
+    <span class="mo-ai__dot"></span>
+    <span class="mo-ai__badge" id="mo-ai-badge">0</span>
+    🤖
   </button>
 
-  <section class="mo-ai__panel" role="dialog" aria-label="MO Assistant">
+  <section class="mo-ai__panel" aria-label="MO Assistant" role="dialog">
     <header class="mo-ai__header">
       <div class="mo-ai__title">
         <div class="mo-ai__avatar">MO</div>
@@ -2174,7 +2177,12 @@
           <div class="mo-ai__status">Online • Replies instantly</div>
         </div>
       </div>
-      <button class="mo-ai__close" type="button" aria-label="Close">×</button>
+
+      <div class="mo-ai__actions">
+        <button class="mo-ai__btn" id="mo-ai-clear" type="button" title="Clear chat">🧹</button>
+        <button class="mo-ai__btn" id="mo-ai-min" type="button" title="Minimize">—</button>
+        <button class="mo-ai__close" type="button" aria-label="Close">×</button>
+      </div>
     </header>
 
     <main class="mo-ai__msgs" id="mo-ai-msgs"></main>
@@ -2187,17 +2195,13 @@
     </div>
 
     <footer class="mo-ai__footer">
-<button id="mo-ai-wa" class="mo-ai__wa" type="button" aria-label="WhatsApp">
-  <svg class="mo-ai__wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-    <path fill="#25D366" d="M19.11 17.71c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.93-.96 2.27 0 1.34.99 2.63 1.13 2.81.14.18 1.95 2.98 4.72 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.75.11.53-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.12-.25-.2-.52-.34z"/>
-  </svg>
-  <span class="mo-ai__wa-text">WhatsApp</span>
-</button>
-
-
       <input id="mo-ai-input" class="mo-ai__input" placeholder="Ask about SEO, Ads, Websites..." autocomplete="off" />
-
       <button id="mo-ai-send" class="mo-ai__send" type="button" aria-label="Send">➤</button>
+
+      <button id="mo-ai-wa" class="mo-ai__wa" type="button" aria-label="WhatsApp">
+        <span class="mo-ai__wa-ico"></span>
+        <span>Chat on WhatsApp</span>
+      </button>
     </footer>
   </section>
 </div>
@@ -2205,22 +2209,32 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("mo-ai");
+  if (!root) return;
+
   const fab = root.querySelector(".mo-ai__fab");
   const panel = root.querySelector(".mo-ai__panel");
   const closeBtn = root.querySelector(".mo-ai__close");
+  const btnMin = document.getElementById("mo-ai-min");
+  const btnClear = document.getElementById("mo-ai-clear");
+
   const msgs = document.getElementById("mo-ai-msgs");
   const input = document.getElementById("mo-ai-input");
   const send = document.getElementById("mo-ai-send");
   const chips = root.querySelectorAll(".mo-ai__chip");
   const waBtn = document.getElementById("mo-ai-wa");
+  const badgeEl = document.getElementById("mo-ai-badge");
 
-  // ✅ Put your WhatsApp number here (country code + number, no +, no spaces)
+  // ✅ Change this to your WhatsApp number (countrycode+number, no +, no spaces)
   const WHATSAPP_NUMBER = "91XXXXXXXXXX";
 
-  const STORAGE_KEY = "mo_ai_history_v3";
-  let lead = JSON.parse(localStorage.getItem("mo_ai_lead") || "null");
+  // ✅ Reset per session (different users on same device/browser)
+  const STORAGE_KEY = "mo_ai_chat_history_v1";
+  const LEAD_KEY = "mo_ai_lead_v1";
 
-  // ===== Sounds (no audio files needed) =====
+  let unread = 0;
+  let lead = JSON.parse(sessionStorage.getItem(LEAD_KEY) || "null");
+
+  // ===== Sounds (no audio files)
   let audioCtx = null;
   let typingTimer = null;
 
@@ -2232,27 +2246,32 @@ document.addEventListener("DOMContentLoaded", () => {
       o.type = "sine";
       o.frequency.value = freq;
       g.gain.value = gainVal;
-      o.connect(g); g.connect(audioCtx.destination);
+      o.connect(g);
+      g.connect(audioCtx.destination);
       o.start();
       o.stop(audioCtx.currentTime + dur);
-    } catch(e) {}
+    } catch (e) {}
   }
 
-  function typingSoundStart(){
+  function typingSoundStart() {
     typingSoundStop();
     typingTimer = setInterval(() => beep(740, 0.03, 0.03), 170);
   }
-  function typingSoundStop(){
+
+  function typingSoundStop() {
     if (typingTimer) clearInterval(typingTimer);
     typingTimer = null;
   }
 
-  // ===== Open/Close Smooth Animation =====
+  // ===== Open/Close smooth animation
   function openChat() {
     panel.style.display = "flex";
     requestAnimationFrame(() => panel.classList.add("is-open"));
+    unread = 0;
+    badgeEl.style.display = "none";
     setTimeout(() => input.focus(), 70);
   }
+
   function closeChat() {
     panel.classList.remove("is-open");
     setTimeout(() => { panel.style.display = "none"; }, 260);
@@ -2260,19 +2279,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fab.addEventListener("click", openChat);
   closeBtn.addEventListener("click", closeChat);
+  btnMin.addEventListener("click", closeChat);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && panel.style.display === "flex") closeChat();
   });
 
-  function scrollBottom(){ msgs.scrollTop = msgs.scrollHeight; }
+  function nowTime() {
+    const d = new Date();
+    return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  }
 
-  function bubble(text, who="bot"){
-    const div = document.createElement("div");
-    div.className = "mo-ai__bubble " + (who==="user" ? "mo-ai__user" : "mo-ai__bot");
-    div.textContent = text;
-    msgs.appendChild(div);
+  function scrollBottom() {
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function bubble(text, who = "bot") {
+    const wrap = document.createElement("div");
+    wrap.className = "mo-ai__bubble " + (who === "user" ? "mo-ai__user" : "mo-ai__bot");
+    wrap.textContent = text;
+
+    const t = document.createElement("div");
+    t.className = "mo-ai__time";
+    t.textContent = nowTime();
+    wrap.appendChild(t);
+
+    msgs.appendChild(wrap);
     scrollBottom();
+
+    // Unread badge if panel closed and bot replies
+    if (panel.style.display !== "flex" && who === "bot") {
+      unread++;
+      badgeEl.textContent = String(unread);
+      badgeEl.style.display = "grid";
+    }
   }
 
   function typing(on = true) {
@@ -2280,9 +2320,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (on) {
       if (t) return;
       t = document.createElement("div");
-      t.id="mo-typing";
-      t.className="mo-ai__typing";
-      t.innerHTML="<span></span><span></span><span></span>";
+      t.id = "mo-typing";
+      t.className = "mo-ai__typing";
+      t.innerHTML = "<span></span><span></span><span></span>";
       msgs.appendChild(t);
       scrollBottom();
       typingSoundStart();
@@ -2292,77 +2332,92 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function saveHistory(){
-    const all = [...msgs.querySelectorAll(".mo-ai__bubble")].map(b=>({
-      who: b.classList.contains("mo-ai__user") ? "user":"bot",
-      text: b.textContent
+  function saveHistory() {
+    const all = [...msgs.querySelectorAll(".mo-ai__bubble")].map((b) => ({
+      who: b.classList.contains("mo-ai__user") ? "user" : "bot",
+      text: b.childNodes[0]?.textContent || b.textContent
     }));
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(all));
   }
 
-  function loadHistory(){
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(!raw) return false;
-    try{
+  function loadHistory() {
+    const raw = sessionStorage.getItem(STORAGE_KEY);
+    if (!raw) return false;
+    try {
       const data = JSON.parse(raw);
-      if(!Array.isArray(data) || !data.length) return false;
-      data.forEach(m => bubble(m.text, m.who));
+      if (!Array.isArray(data) || !data.length) return false;
+      data.forEach((m) => bubble(m.text, m.who));
       return true;
-    }catch(e){ return false; }
+    } catch (e) {
+      return false;
+    }
   }
 
-  // ===== Smart reply logic (STATIC SITE BOT) =====
-  function replyLogic(q){
+  // Clear chat
+  btnClear.addEventListener("click", () => {
+    sessionStorage.removeItem(STORAGE_KEY);
+    sessionStorage.removeItem(LEAD_KEY);
+    lead = null;
+    msgs.innerHTML = "";
+    bubble("Chat cleared ✅ How can I help you now?", "bot");
+  });
+
+  // Smart reply logic (static assistant)
+  function replyLogic(q) {
     const s = q.toLowerCase();
 
-    // Lead capture flow
-    if(!lead){
-      const phoneMatch = q.match(/(\+?\d[\d\s-]{8,}\d)/);
-      const emailMatch = q.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+    // Lead capture step
+    if (!lead && (s.includes("quote") || s.includes("pricing") || s.includes("price"))) {
+      return "Sure ✅ To send a quote, please share:\n1) Your Name\n2) WhatsApp number or Email";
+    }
 
-      if(phoneMatch || emailMatch){
-        lead = { phone: phoneMatch ? phoneMatch[0] : "", email: emailMatch ? emailMatch[0] : "" };
-        localStorage.setItem("mo_ai_lead", JSON.stringify(lead));
-        return "Perfect ✅ Saved. Now tell me your business type (ex: salon, restaurant, ecommerce).";
-      }
-
-      if(s.includes("quote") || s.includes("pricing") || s.includes("price")){
-        return "Sure ✅ For a quick quote, share your WhatsApp number or email (so we can send proposal).";
+    // Capture email/phone if present
+    if (!lead) {
+      const email = q.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
+      const phone = q.match(/(\+?\d[\d\s-]{8,}\d)/)?.[0];
+      if (email || phone) {
+        lead = { email: email || "", phone: phone || "" };
+        sessionStorage.setItem(LEAD_KEY, JSON.stringify(lead));
+        return "Perfect ✅ Saved. Now tell me your business type + city (example: Salon, Bhubaneswar).";
       }
     }
 
-    if(s.includes("pricing") || s.includes("price") || s.includes("cost")){
+    if (s.includes("pricing") || s.includes("price") || s.includes("cost")) {
       return "Pricing (estimate):\n• Website: ₹8k–₹60k\n• SEO: ₹10k–₹50k/month\n• Ads Mgmt: ₹5k+ (plus ad budget)\nTell me your business + city for exact plan.";
     }
 
-    if(s.includes("services")){
-      return "We offer:\n✅ Website Development\n✅ SEO (On-page + Off-page)\n✅ Google & Meta Ads\n✅ Branding + Content\nWhat’s your main goal: leads or sales?";
+    if (s.includes("services")) {
+      return "We offer:\n✅ Website Development\n✅ SEO\n✅ Google/Meta Ads\n✅ Branding + Content\nWhat’s your goal: leads or sales?";
     }
 
-    if(s.includes("seo")){
-      return "SEO includes audit, keyword plan, on-page, technical fixes, content strategy, and backlinks.\nShare your website URL + niche.";
+    if (s.includes("seo")) {
+      return "SEO includes audit, keyword plan, on-page, technical fixes, content strategy, and backlinks.\nShare your website + niche.";
     }
 
-    if(s.includes("ads") || s.includes("google") || s.includes("meta")){
+    if (s.includes("ads") || s.includes("google") || s.includes("meta")) {
       return "We run conversion-focused ads with tracking (Pixel + GA4) + landing page optimization.\nWhat’s your monthly ad budget?";
     }
 
-    if(s.includes("contact") || s.includes("call") || s.includes("phone")){
-      return "You can contact MO Digital from the Contact page.\nIf you want, share your WhatsApp number format to show on website.";
+    if (s.includes("contact")) {
+      return "You can contact from your Contact page, or click WhatsApp below to chat instantly.";
     }
 
-    return "Got it ✅ Tell me:\n1) Business type\n2) City\n3) Goal (leads/sales)\nI’ll suggest the best solution.";
+    if (s.includes("hi") || s.includes("hello") || s === "hii") {
+      return "Hi 👋 Welcome! Tell me what you need:\n1) Website\n2) SEO\n3) Ads\n4) Branding";
+    }
+
+    return "Got it ✅ Tell me:\n1) Business type\n2) City\n3) Goal (leads/sales)\nI’ll suggest best plan.";
   }
 
-  async function handleSend(text){
+  async function handleSend(text) {
     const msg = (text ?? input.value).trim();
-    if(!msg) return;
+    if (!msg) return;
 
     bubble(msg, "user");
     beep(520, 0.06, 0.07); // send sound
     input.value = "";
-    typing(true);
 
+    typing(true);
     setTimeout(() => {
       const r = replyLogic(msg);
       typing(false);
@@ -2373,8 +2428,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   send.addEventListener("click", () => handleSend());
-  input.addEventListener("keydown", (e) => { if(e.key==="Enter") handleSend(); });
-  chips.forEach(btn => btn.addEventListener("click", () => handleSend(btn.dataset.q)));
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") handleSend();
+  });
+
+  chips.forEach((btn) => {
+    btn.addEventListener("click", () => handleSend(btn.dataset.q));
+  });
 
   // WhatsApp fallback
   waBtn.addEventListener("click", () => {
@@ -2385,7 +2445,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Init
   const hasHistory = loadHistory();
-  if(!hasHistory){
+  if (!hasHistory) {
     bubble("Hi 👋 I’m MO Assistant. Ask about SEO, Ads, Websites, or Pricing.\nType “Get a quote” to start.", "bot");
   }
 });
